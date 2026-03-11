@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import img from 'src/assets/gallery/img.jpg'
+import img1 from 'src/assets/gallery/img1.jpg'
+import img2 from 'src/assets/gallery/img2.jpg'
+import img3 from 'src/assets/gallery/img3.jpg'
+import img4 from 'src/assets/gallery/img4.jpg'
+import img5 from 'src/assets/gallery/img5.jpg'
+import img6 from 'src/assets/gallery/img6.jpg'
+import img7 from 'src/assets/gallery/img7.jpg'
 
 interface GalleryImage {
   id: number
@@ -11,44 +19,44 @@ interface GalleryImage {
 const images: GalleryImage[] = [
   {
     id: 1,
-    src: 'src/assets/gallery/img.jpg',
+    src: img,
     alt: "Зелене подвір'я та фасад пансіонату з колонами",
     span: 'col-span-2 row-span-2',
   },
   {
     id: 2,
-    src: 'src/assets/gallery/img1.jpg',
+    src: img1,
     alt: 'Фасад будівлі пансіонату з відкритою терасою',
   },
   {
     id: 3,
-    src: 'src/assets/gallery/img2.jpg',
+    src: img2,
     alt: 'Просторий спальний номер з кристальною люстрою',
   },
   {
     id: 4,
-    src: 'src/assets/gallery/img3.jpg',
+    src: img3,
     alt: 'Вхідна зала пансіонату з люстрою та диваном',
     span: 'col-span-2',
   },
   {
     id: 5,
-    src: 'src/assets/gallery/img4.jpg',
+    src: img4,
     alt: 'Затишний спальний номер з каміном та шкіряними кріслами',
   },
   {
     id: 6,
-    src: 'src/assets/gallery/img5.jpg',
+    src: img5,
     alt: 'Просторна кухня-їдальня з великим обіднім столом',
   },
   {
     id: 7,
-    src: 'src/assets/gallery/img6.jpg',
+    src: img6,
     alt: 'Світла кімната з паркетом та білими меблями',
   },
   {
     id: 8,
-    src: 'src/assets/gallery/img7.jpg',
+    src: img7,
     alt: "Санвузол з мармуровою плиткою та джакузі",
   },
 ]
