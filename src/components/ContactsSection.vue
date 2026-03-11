@@ -53,7 +53,7 @@ async function handleSubmit() {
               width="100%"
               height="260"
               style="border: 0; filter: sepia(0.12) contrast(1.05);"
-              allowfullscreen=""
+              allowfullscreen="true"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Розташування пансіонату Добре серце"

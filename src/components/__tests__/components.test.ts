@@ -30,7 +30,6 @@ describe('AppFooter', () => {
 describe('ServicesSection', () => {
   it('renders all 8 service cards', () => {
     const wrapper = mount(ServicesSection)
-    const cards = wrapper.findAll('[data-animate] .card, .card')
     // Should have service items rendered
     expect(wrapper.text()).toContain('Медичний нагляд')
     expect(wrapper.text()).toContain('Цілодобова медсестра')
