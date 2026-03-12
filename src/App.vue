@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { ref, onMounted } from "vue"
+
+import Loader from "@/components/Loader.vue"
 import AppHeader from '@/components/AppHeader.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
@@ -10,28 +12,46 @@ import DocumentsSection from '@/components/DocumentsSection.vue'
 import PriceSection from '@/components/PriceSection.vue'
 import ContactsSection from '@/components/ContactsSection.vue'
 import AppFooter from '@/components/AppFooter.vue'
+
 import { useScrollAnimation } from '@/composables/useScroll'
 
 const { observeElements } = useScrollAnimation()
+
+const loading = ref(true)
 const showBackTop = ref(false)
 
 onMounted(() => {
+
   observeElements('[data-animate]')
 
-  // Back-to-top visibility
   const onScroll = () => {
     showBackTop.value = window.scrollY > 400
   }
-  window.addEventListener('scroll', onScroll, { passive: true })
-})
 
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
+  window.addEventListener('scroll', onScroll, { passive: true })
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      loading.value = false
+    }, 1200)
+  })
+
+})
 </script>
 
+
 <template>
-  <div class="min-h-screen">
+
+  <Transition
+    enter-active-class="transition-opacity duration-500"
+    leave-active-class="transition-opacity duration-500"
+    enter-from-class="opacity-0"
+    leave-to-class="opacity-0"
+  >
+    <Loader v-if="loading" />
+  </Transition>
+
+  <div v-show="!loading" class="min-h-screen">
     <AppHeader />
 
     <main>
