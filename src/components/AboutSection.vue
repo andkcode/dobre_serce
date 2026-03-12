@@ -71,7 +71,7 @@ const missions = [
           >
             <div class="relative">
               <img
-                src="../assets/logo.png""
+                src="../assets/logo.png"
                 alt="Логотип Добре серце"
                 class="h-11 w-11 rounded-full bg-white/20 p-0.5 ring-1 ring-white/30"
               />

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue"
+import { ref, onMounted, onBeforeMount } from "vue"
 
 import Loader from "@/components/Loader.vue"
 import AppHeader from '@/components/AppHeader.vue'
@@ -14,6 +14,17 @@ import ContactsSection from '@/components/ContactsSection.vue'
 import AppFooter from '@/components/AppFooter.vue'
 
 import { useScrollAnimation } from '@/composables/useScroll'
+onBeforeMount(() => {
+const originalSetAttribute = Element.prototype.setAttribute
+Element.prototype.setAttribute = function(name, value) {
+  try {
+    return originalSetAttribute.call(this, name, value)
+  } catch (e) {
+    console.error('Bad attribute:', name, JSON.stringify(value))
+    throw e
+  }
+}
+})
 
 const { observeElements } = useScrollAnimation()
 
