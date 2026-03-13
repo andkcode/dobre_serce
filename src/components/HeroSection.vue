@@ -1,6 +1,6 @@
 <script setup lang="ts">
-
 import garden from "../assets/hero/garden.mp4"
+import gardenMobile from "../assets/hero/garden-mobile.mp4"
 
 function scrollTo(id: string) {
   document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -10,19 +10,17 @@ function scrollTo(id: string) {
 <template>
   <section
     class="relative flex min-h-screen items-center overflow-hidden"
-    aria-label="Головний банер"
+    aria-label="Главный баннер"
   >
     <!-- ── Layered background ── -->
     <div class="absolute inset-0">
-    <video
-      :src="garden"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      class="h-full w-full object-cover object-center hero-video"
-    ></video>
+      <video
+        autoplay muted loop playsinline preload="auto"
+        class="h-full w-full object-cover hero-video"
+      >
+        <source :src="gardenMobile" media="(max-width: 767px)" type="video/mp4" />
+        <source :src="garden" type="video/mp4" />
+      </video>
       <!-- Multi-layer gradient for depth -->
       <div class="absolute inset-0 bg-hero-gradient" />
       <!-- Warm vignette bottom -->
@@ -81,13 +79,12 @@ function scrollTo(id: string) {
           <div class="relative">
             <img
               src="../assets/logo.png"
-              alt="Логотип Добре серце"
+              alt="Логотип Доброе сердце"
               class="h-6 w-6 rounded-full ring-1 ring-white/20"
             />
-            <span class="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 animate-heartbeat rounded-full bg-emerald-400 ring-1 ring-black/20" />
           </div>
           <span class="font-body text-xs font-500 tracking-widest text-white/80 uppercase">
-            Пансіонат «Добре серце» · Вінниця, Україна
+            Пансионат «Добре сердце» · Астана, Казахстан
           </span>
         </div>
 
@@ -96,11 +93,11 @@ function scrollTo(id: string) {
           class="delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-balance"
           style="font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: 700; line-height: 1.08;"
         >
-          Комфорт та турбота<br />
+          Комфорт и забота<br />
           <em
             class="font-display italic"
             style="font-weight: 400; color: #dcc07e;"
-          >для ваших близьких</em>
+          >для ваших близких</em>
         </h1>
 
         <!-- Decorative gold line -->
@@ -114,9 +111,9 @@ function scrollTo(id: string) {
           class="delay-200 animate-fade-up max-w-xl font-body text-lg font-300 leading-relaxed text-white/72 md:text-xl"
           style="color: rgba(255,255,255,0.72);"
         >
-          Наш пансіонат — місце, де кожен постоялець відчуває себе
-          вдома: тепла атмосфера, фахівці поруч та повноцінне
-          активне життя під турботливим наглядом.
+          Наш пансионат — место, где каждый проживающий чувствует себя
+          дома: тёплая атмосфера, специалисты рядом и полноценная
+          активная жизнь под заботливым надзором.
         </p>
 
         <!-- Stats row -->
@@ -145,7 +142,7 @@ function scrollTo(id: string) {
               5×
             </div>
             <div class="font-body text-xs font-400 uppercase tracking-widest text-white/50">
-              Харчування на день
+              Питание в день
             </div>
           </div>
 
@@ -159,7 +156,7 @@ function scrollTo(id: string) {
               100%
             </div>
             <div class="font-body text-xs font-400 uppercase tracking-widest text-white/50">
-              Індивідуальний підхід
+              Индивидуальный подход
             </div>
           </div>
         </div>
@@ -167,7 +164,7 @@ function scrollTo(id: string) {
         <!-- CTA Buttons -->
         <div class="delay-400 animate-fade-up mt-11 flex flex-wrap items-center gap-4">
           <button class="btn-primary" @click="scrollTo('#contacts')">
-            Записатися до пансіонату
+            Записаться в пансионат
             <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -177,7 +174,7 @@ function scrollTo(id: string) {
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
             </svg>
-            Дізнатися більше
+            Узнать больше
           </button>
         </div>
       </div>
@@ -185,10 +182,10 @@ function scrollTo(id: string) {
 
     <!-- ── Scroll indicator ── -->
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-      <span class="font-body text-[10px] uppercase tracking-[0.2em] text-white/40">Гортайте</span>
+      <span class="font-body text-[10px] uppercase tracking-[0.2em] text-white/40">Листайте</span>
       <button
         class="animate-scroll flex flex-col items-center"
-        aria-label="Прокрутити вниз"
+        aria-label="Прокрутить вниз"
         @click="scrollTo('#about')"
       >
         <div
@@ -212,7 +209,7 @@ export default {
   data() {
     return {
       stats: [
-        { value: '24/7', label: 'Цілодобовий догляд' },
+        { value: '24/7', label: 'Круглосуточный уход' },
       ]
     }
   }

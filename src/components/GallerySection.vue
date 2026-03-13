@@ -20,44 +20,44 @@ const images: GalleryImage[] = [
   {
     id: 1,
     src: img,
-    alt: "Зелене подвір'я та фасад пансіонату з колонами",
+    alt: "Зелёный двор и фасад пансионата с колоннами",
     span: 'col-span-2 row-span-2',
   },
   {
     id: 2,
     src: img1,
-    alt: 'Фасад будівлі пансіонату з відкритою терасою',
+    alt: 'Фасад здания пансионата с открытой террасой',
   },
   {
     id: 3,
     src: img2,
-    alt: 'Просторий спальний номер з кристальною люстрою',
+    alt: 'Просторная спальня с хрустальной люстрой',
   },
   {
     id: 4,
     src: img3,
-    alt: 'Вхідна зала пансіонату з люстрою та диваном',
+    alt: 'Входной зал пансионата с люстрой и диваном',
     span: 'col-span-2',
   },
   {
     id: 5,
     src: img4,
-    alt: 'Затишний спальний номер з каміном та шкіряними кріслами',
+    alt: 'Уютная спальня с камином и кожаными креслами',
   },
   {
     id: 6,
     src: img5,
-    alt: 'Просторна кухня-їдальня з великим обіднім столом',
+    alt: 'Просторная кухня-столовая с большим обеденным столом',
   },
   {
     id: 7,
     src: img6,
-    alt: 'Світла кімната з паркетом та білими меблями',
+    alt: 'Светлая комната с паркетом и белой мебелью',
   },
   {
     id: 8,
     src: img7,
-    alt: "Санвузол з мармуровою плиткою та джакузі",
+    alt: "Санузел с мраморной плиткой и джакузи",
   },
 ]
 
@@ -87,7 +87,7 @@ function nextImage() {
 </script>
 
 <template>
-  <section id="gallery" class="relative overflow-hidden py-28 lg:py-36" style="background: var(--color-ink-900);">
+  <section id="gallery" class="relative overflow-hidden py-28 lg:py-36" style="background: #1a2744;">
     <!-- Background pattern -->
     <div
       class="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -114,8 +114,8 @@ function nextImage() {
           class="font-display font-700 text-white"
           style="font-size: clamp(2rem, 4vw, 3rem);"
         >
-          Погляньте на наш<br />
-          <em class="font-display italic font-400" style="color: var(--color-gold-300);">затишний пансіонат</em>
+          Взгляните на наш<br />
+          <em class="font-display italic font-400" style="color: var(--color-gold-300);">уютный пансионат</em>
         </h2>
       </div>
 
@@ -129,7 +129,7 @@ function nextImage() {
             image.span || '',
             `animation-delay-${Math.min(i * 100, 500)}`,
           ]"
-          :aria-label="`Переглянути фото: ${image.alt}`"
+          :aria-label="`Просмотреть фото: ${image.alt}`"
           @click="openLightbox(image, i)"
         >
           <img
@@ -194,7 +194,7 @@ function nextImage() {
           <!-- Close button -->
           <button
             class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all hover:bg-white/20"
-            aria-label="Закрити"
+            aria-label="Закрыть"
             @click="closeLightbox"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -205,7 +205,7 @@ function nextImage() {
           <!-- Prev / Next arrows -->
           <button
             class="absolute left-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all hover:bg-white/20 md:left-8"
-            aria-label="Попереднє фото"
+            aria-label="Предыдущее фото"
             @click="prevImage"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -214,7 +214,7 @@ function nextImage() {
           </button>
           <button
             class="absolute right-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all hover:bg-white/20 md:right-8"
-            aria-label="Наступне фото"
+            aria-label="Следующее фото"
             @click="nextImage"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">

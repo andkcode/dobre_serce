@@ -7,12 +7,12 @@ const isMobileMenuOpen = ref(false)
 const activeItem = ref<string | null>(null)
 
 const navItems = [
-  { label: 'Про нас',     href: '#about' },
-  { label: 'Послуги',     href: '#services' },
-  { label: 'Проживання',  href: '#accommodation' },
-  { label: 'Документи',   href: '#documents' },
-  { label: 'Ціна',        href: '#price' },
-  { label: 'Контакти',    href: '#contacts' },
+  { label: 'О нас',       href: '#about' },
+  { label: 'Услуги',      href: '#services' },
+  { label: 'Проживание',  href: '#accommodation' },
+  { label: 'Документы',   href: '#documents' },
+  { label: 'Цена',        href: '#price' },
+  { label: 'Контакты',    href: '#contacts' },
 ]
 
 function scrollToSection(href: string) {
@@ -32,24 +32,33 @@ function scrollToTop() {
     :class="{ 'ds-header--scrolled': isScrolled }"
     role="banner"
   >
-    <!-- Accent streak -->
     <div class="ds-header__streak" aria-hidden="true" />
-    <!-- Glass background fill -->
     <div class="ds-header__bg" aria-hidden="true" />
 
-    <!-- Nav row -->
-    <nav class="ds-header__nav" aria-label="Головна навігація">
+    <nav class="ds-header__nav" aria-label="Главная навигация">
 
-      <!-- Logo -->
-    <div class="ds-logo__img-wrap">
-      <img
-        src="../assets/dobre_serce.svg"
-        alt="Логотип Добре серце"
-        class="ds-logo__img"
-      />
-    </div>
+      <div class="ds-logo__img-wrap" style="position: relative; display: inline-block;">
+        <div style="
+          position: absolute;
+          top: -5px;
+          left: 43%;
+          transform: translateX(-50%);
+          font-family: var(--font-family-body, system-ui, sans-serif);
+          font-size: 0.70rem;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--color-gold-400, #c9a94e);
+          white-space: nowrap;
+          pointer-events: none;
+        ">Астана</div>
+        <img
+          src="../assets/dobre_serce.svg"
+          alt="Логотип Доброе сердце"
+          class="ds-logo__img"
+        />
+      </div>
 
-      <!-- Desktop nav -->
       <ul class="ds-nav__list" role="list">
         <li v-for="item in navItems" :key="item.href" class="ds-nav__item">
           <button
@@ -63,8 +72,7 @@ function scrollToTop() {
         </li>
       </ul>
 
-      <!-- Phone CTA -->
-      <a href="tel:+380961462910" class="ds-cta" aria-label="Зателефонувати">
+      <a href="tel:+380961462910" class="ds-cta" aria-label="Позвонить">
         <span class="ds-cta__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -74,11 +82,10 @@ function scrollToTop() {
         <span class="ds-cta__shimmer" aria-hidden="true" />
       </a>
 
-      <!-- Burger -->
       <button
-        class="ds-burger "
+        class="ds-burger"
         :class="{ 'ds-burger--open': isMobileMenuOpen }"
-        aria-label="Відкрити меню"
+        aria-label="Открыть меню"
         :aria-expanded="isMobileMenuOpen"
         @click="isMobileMenuOpen = !isMobileMenuOpen"
       >
@@ -88,14 +95,13 @@ function scrollToTop() {
       </button>
     </nav>
 
-    <!-- Mobile drawer -->
     <Transition name="ds-drawer">
       <div
         v-if="isMobileMenuOpen"
         class="ds-drawer"
         role="dialog"
         aria-modal="true"
-        aria-label="Мобільне меню"
+        aria-label="Мобильное меню"
       >
         <div class="ds-drawer__sep" aria-hidden="true" />
         <ul class="ds-drawer__list" role="list">
@@ -115,7 +121,7 @@ function scrollToTop() {
           <svg class="ds-drawer__cta-icon" fill="currentColor" viewBox="0 0 24 24">
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
           </svg>
-          Зателефонувати
+          Позвонить
         </a>
       </div>
     </Transition>

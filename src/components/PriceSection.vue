@@ -4,27 +4,27 @@ import logoRed from "../assets/logo-red.png"
 const factors = [
   {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>`,
-    label: 'Тривалість проживання',
+    label: 'Продолжительность проживания',
   },
   {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>`,
-    label: "Стан здоров'я постояльця",
+    label: 'Состояние здоровья проживающего',
   },
   {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>`,
-    label: 'Категорія номеру проживання',
+    label: 'Категория номера проживания',
   },
   {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"/></svg>`,
-    label: 'Обсяг необхідного догляду',
+    label: 'Объём необходимого ухода',
   },
 ]
 
 const steps = [
-  { n: 1, text: 'Зателефонуйте нам' },
-  { n: 2, text: 'Дізнайтеся про наявність вільних місць' },
-  { n: 3, text: 'Обговоріть індивідуальні умови проживання' },
-  { n: 4, text: 'Підпишіть договір та оформіть документи' },
+  { n: 1, text: 'Позвоните нам' },
+  { n: 2, text: 'Узнайте о наличии свободных мест' },
+  { n: 3, text: 'Обсудите индивидуальные условия проживания' },
+  { n: 4, text: 'Подпишите договор и оформите документы' },
 ]
 </script>
 
@@ -43,7 +43,7 @@ const steps = [
         <div class="relative" data-animate>
           <div
             class="relative overflow-hidden rounded-3xl p-10 shadow-lift"
-            style="background: linear-gradient(135deg, var(--color-ink-900) 0%, var(--color-ink-800) 60%, #2a1a18 100%);"
+            style="background: linear-gradient(135deg, #1a2744 0%, #1e3058 60%, #162040 100%);"
           >
             <!-- Decorative circles -->
             <div
@@ -59,18 +59,18 @@ const steps = [
             <img
               src="../assets/logo.png"
               alt=""
-              class="absolute right-8 top-8 h-20 w-20 rounded-full opacity-10 ring-1 ring-white/10"
+              class="absolute right-8 top-8 h-20 w-20 opacity-10"
             />
 
             <div class="relative z-10 h-full">
               <div class="mb-2 font-body text-xs font-600 uppercase tracking-[0.2em] text-white/40">
-                Вартість проживання
+                Стоимость проживания
               </div>
               <div
                 class="mb-2 font-display font-700 text-white"
                 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1;"
               >
-                Індивідуально
+                Индивидуально
               </div>
               <!-- Gold underline -->
               <div
@@ -79,9 +79,9 @@ const steps = [
               />
 
               <p class="mb-8 font-body text-sm leading-relaxed font-300 text-white/60">
-                Вартість проживання у пансіонаті «Добре серце»
-                встановлюється індивідуально для кожного постояльця
-                з урахуванням їхніх потреб та обраного формату.
+                Стоимость проживания в пансионате «Доброе сердце»
+                устанавливается индивидуально для каждого проживающего
+                с учётом их потребностей и выбранного формата.
               </p>
 
               <!-- Factor grid -->
@@ -110,24 +110,24 @@ const steps = [
             style="background: var(--color-brand-600);"
           >
             <span class="font-body text-xs font-600 uppercase tracking-widest text-white">
-              Дзвінок безкоштовний
+              Звонок бесплатный
             </span>
           </div>
         </div>
 
         <!-- ── Right: Content & steps ── -->
         <div data-animate class="delay-200">
-          <div class="eyebrow mb-5">Ціна</div>
+          <div class="eyebrow mb-5">Цена</div>
           <h2 class="section-title mb-6">
-            Прозоре ціноутворення<br />
-            <em class="font-display italic font-400" style="color: var(--color-brand-600);">для кожної сім'ї</em>
+            Прозрачное ценообразование<br />
+            <em class="font-display italic font-400" style="color: var(--color-brand-600);">для каждой семьи</em>
           </h2>
           <div class="gold-divider mb-8" />
           <p class="section-subtitle mb-10 leading-prose">
-            Вартість визначається індивідуально з урахуванням тривалості
-            проживання, стану здоров'я постояльця та категорії номеру.
-            Для того, щоб записатися, необхідно зателефонувати і
-            дізнатися про наявність вільних місць.
+            Стоимость определяется индивидуально с учётом продолжительности
+            проживания, состояния здоровья проживающего и категории номера.
+            Чтобы записаться, необходимо позвонить и
+            узнать о наличии свободных мест.
           </p>
 
           <!-- Steps -->
@@ -138,17 +138,17 @@ const steps = [
               class="group flex items-center gap-4"
             >
               <div class="flex h-9 w-9 flex-shrink-0 items-center justify-center">
-                <img 
-                  :src="logoRed" 
-                  alt="icon" 
-                  class="h-7 w-7 object-contain transition-transform duration-300 group-hover:scale-110" 
+                <img
+                  :src="logoRed"
+                  alt="icon"
+                  class="h-7 w-7 object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              
+
               <p class="font-body text-base font-500 text-ink-700 text-left max-w-[calc(100%-4rem)]">
                 {{ step.text }}
               </p>
-              
+
               <div
                 class="h-px flex-1 bg-ivory-200 transition-all duration-300 group-hover:bg-brand-100"
               />
@@ -160,7 +160,7 @@ const steps = [
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
               </svg>
-              Дізнатися ціну
+              Узнать цену
             </a>
             <div class="font-body text-sm text-ink-400">+38 096 146 29 10</div>
           </div>

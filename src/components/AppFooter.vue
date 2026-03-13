@@ -2,12 +2,12 @@
 const currentYear = new Date().getFullYear()
 
 const navLinks = [
-  { label: 'Про нас',      href: '#about' },
-  { label: 'Послуги',      href: '#services' },
-  { label: 'Проживання',   href: '#accommodation' },
-  { label: 'Документи',    href: '#documents' },
-  { label: 'Ціна',         href: '#price' },
-  { label: 'Контакти',     href: '#contacts' },
+  { label: 'О нас',        href: '#about' },
+  { label: 'Услуги',       href: '#services' },
+  { label: 'Проживание',   href: '#accommodation' },
+  { label: 'Документы',    href: '#documents' },
+  { label: 'Цена',         href: '#price' },
+  { label: 'Контакты',     href: '#contacts' },
 ]
 
 function scrollTo(href: string) {
@@ -17,13 +17,10 @@ function scrollTo(href: string) {
 
 <template>
   <footer style="background: var(--color-ink-900);" class="relative overflow-hidden">
-    <!-- Gold top accent line -->
     <div
       class="absolute left-0 right-0 top-0 h-px"
       style="background: linear-gradient(90deg, transparent 0%, var(--color-gold-400) 30%, var(--color-brand-500) 70%, transparent 100%);"
     />
-
-    <!-- Decorative background element -->
     <div
       class="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full opacity-[0.04]"
       style="background: radial-gradient(circle, var(--color-gold-400) 0%, transparent 70%);"
@@ -32,23 +29,35 @@ function scrollTo(href: string) {
     <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
       <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
 
-      <div class="mb-6 flex flex-col items-start gap-3">
-
-        <img
-          src="../assets/dobre_serce.svg"
-          alt="Логотип Добре серце"
-          style="height: 52px; width: auto;"
-        />
-
-        <div>
-          <div class="font-body text-xs font-400 tracking-widest text-white/35 uppercase">
-            Пансіонат для людей похилого віку
+      <div style="position: relative; display: inline-block;">
+          <div style="
+            position: absolute;
+            top: -5px;
+            left: 41%;
+            transform: translateX(-50%);
+            font-family: var(--font-family-body, system-ui, sans-serif);
+            font-size: 0.70rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-gold-400, #c9a94e);
+            white-space: nowrap;
+            pointer-events: none;
+          ">Астана</div>
+          <img
+            src="../assets/dobre_serce.svg"
+            alt="Логотип Доброе сердце"
+            style="height: 52px; width: auto;"
+          />
+          <div>
+            <div class="font-body text-xs font-400 tracking-widest text-white/35 uppercase">
+              Пансионат для пожилых людей
+            </div>
           </div>
-        </div>
           <p class="mb-7 font-body text-sm font-300 leading-prose text-white/45">
-            Приватний комфортабельний пансіонат «Добре серце» забезпечує
-            цілодобовий кваліфікований догляд за людьми похилого віку у Вінниці
-            з індивідуальним підходом до кожного постояльця.
+            Частный комфортабельный пансионат «Доброе сердце» обеспечивает
+            круглосуточный квалифицированный уход за пожилыми людьми в Виннице
+            с индивидуальным подходом к каждому проживающему.
           </p>
           <a
             href="tel:+380961462910"
@@ -62,10 +71,9 @@ function scrollTo(href: string) {
           </a>
         </div>
 
-        <!-- ── Navigation column ── -->
         <div>
           <h3 class="mb-5 font-body text-xs font-600 uppercase tracking-[0.2em] text-white/40">
-            Навігація
+            Навигация
           </h3>
           <ul class="space-y-3">
             <li v-for="link in navLinks" :key="link.href">
@@ -83,21 +91,20 @@ function scrollTo(href: string) {
           </ul>
         </div>
 
-        <!-- ── Address column ── -->
         <div>
           <h3 class="mb-5 font-body text-xs font-600 uppercase tracking-[0.2em] text-white/40">
-            Контакти
+            Контакты
           </h3>
           <div class="space-y-4">
             <div>
-              <div class="font-body text-sm font-500 text-white/70">🇺🇦 Україна, м. Вінниця</div>
+              <div class="font-body text-sm font-500 text-white/70">🇰🇿 Казахстан, г. Астана</div>
               <div class="mt-0.5 font-body text-sm text-white/40">
-                вул. Митрополита Петра Могили, 6А
+                ул. Митрополита Петра Могилы, 6А
               </div>
             </div>
             <div>
-              <div class="font-body text-sm font-500 text-white/70">Режим роботи:</div>
-              <div class="font-body text-sm text-white/40">Цілодобово, 7 днів на тиждень</div>
+              <div class="font-body text-sm font-500 text-white/70">Режим работы:</div>
+              <div class="font-body text-sm text-white/40">Круглосуточно, 7 дней в неделю</div>
             </div>
             <div class="mt-2">
               <div
@@ -105,21 +112,20 @@ function scrollTo(href: string) {
                 style="background: rgba(201,169,78,0.12); border: 1px solid rgba(201,169,78,0.2);"
               >
                 <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span class="font-body text-xs font-500 text-white/50">Зараз приймаємо заявки</span>
+                <span class="font-body text-xs font-500 text-white/50">Сейчас принимаем заявки</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ── Bottom bar ── -->
       <div
         class="mt-12 border-t pt-8"
         style="border-color: rgba(255,255,255,0.07);"
       >
         <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p class="font-body text-xs text-white/25">
-            © {{ currentYear }} Пансіонат «Добре серце». Всі права захищені.
+            © {{ currentYear }} Пансионат «Доброе сердце». Все права защищены.
           </p>
           <div class="flex items-center gap-2">
             <img
@@ -128,7 +134,7 @@ function scrollTo(href: string) {
               class="h-4 w-4 rounded-full opacity-25"
             />
             <span class="font-body text-xs text-white/20">
-              Створено з турботою та любов'ю до людей
+              Создано с заботой и любовью к людям
             </span>
           </div>
         </div>

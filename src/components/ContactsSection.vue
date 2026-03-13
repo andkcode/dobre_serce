@@ -21,7 +21,6 @@ async function handleSubmit() {
 
 <template>
   <section id="contacts" class="relative overflow-hidden py-28 lg:py-36" style="background: var(--color-ivory-100);">
-    <!-- Decorative background -->
     <div
       class="pointer-events-none absolute left-0 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40"
       style="background: radial-gradient(circle, var(--color-brand-50) 0%, transparent 70%);"
@@ -29,24 +28,21 @@ async function handleSubmit() {
 
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
 
-      <!-- ── Header ── -->
       <div class="mb-16 text-center" data-animate>
-        <div class="eyebrow mb-5 justify-center">Контакти</div>
+        <div class="eyebrow mb-5 justify-center">Контакты</div>
         <h2 class="section-title mb-5">
-          Зв'яжіться<br />
-          <em class="font-display italic font-400" style="color: var(--color-brand-600);">з нами сьогодні</em>
+          Свяжитесь<br />
+          <em class="font-display italic font-400" style="color: var(--color-brand-600);">с нами сегодня</em>
         </h2>
         <p class="section-subtitle mx-auto max-w-xl">
-          Зателефонуйте або заповніть форму — ми відповімо якомога швидше
-          та допоможемо підібрати найкращий варіант для ваших близьких.
+          Позвоните или заполните форму — мы ответим как можно скорее
+          и поможем подобрать лучший вариант для ваших близких.
         </p>
       </div>
 
       <div class="grid gap-12 lg:grid-cols-2">
 
-        <!-- ── Left: Contact info + map ── -->
         <div data-animate>
-          <!-- Map -->
           <div class="mb-8 overflow-hidden rounded-3xl shadow-lift ring-1 ring-ink-100">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2577.8!2d28.468!3d49.233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVmlubml0c2lh!5e0!3m2!1suk!2sua!4v1"
@@ -56,14 +52,13 @@ async function handleSubmit() {
               allowfullscreen="true"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              title="Розташування пансіонату Добре серце"
+              title="Расположение пансионата Доброе сердце"
             />
           </div>
 
-          <!-- Contact cards -->
           <div class="space-y-4">
             <a
-              href="https://maps.google.com/?q=вул.+Митрополита+Петра+Могили,+6А,+Вінниця"
+              href="https://maps.google.com/?q=ул.+Митрополита+Петра+Могилы,+6А,+Винница"
               target="_blank"
               rel="noopener noreferrer"
               class="group flex items-start gap-4 rounded-2xl border border-ivory-200 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-100 hover:shadow-card"
@@ -82,12 +77,12 @@ async function handleSubmit() {
                 </svg>
               </div>
               <div>
-                <div class="font-body text-xs font-600 uppercase tracking-wider text-ink-400">Адреса</div>
+                <div class="font-body text-xs font-600 uppercase tracking-wider text-ink-400">Адрес</div>
                 <div class="mt-0.5 font-body text-base font-500 text-ink-900">
-                  Україна, м. Вінниця
+                  Украина, г. Винница
                 </div>
                 <div class="font-body text-sm text-ink-500">
-                  вул. Митрополита Петра Могили, 6А
+                  ул. Митрополита Петра Могилы, 6А
                 </div>
               </div>
               <svg class="ml-auto mt-1 h-4 w-4 flex-shrink-0 text-ink-300 transition-colors duration-200 group-hover:text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -119,7 +114,7 @@ async function handleSubmit() {
                 >
                   +38 096 146 29 10
                 </div>
-                <div class="font-body text-xs text-ink-400">Цілодобово, без вихідних</div>
+                <div class="font-body text-xs text-ink-400">Круглосуточно, без выходных</div>
               </div>
             </a>
 
@@ -137,35 +132,30 @@ async function handleSubmit() {
                 </svg>
               </div>
               <div>
-                <div class="font-body text-xs font-600 uppercase tracking-wider text-ink-400">Години роботи</div>
-                <div class="mt-0.5 font-body text-base font-500 text-ink-900">Щодня, 24 / 7</div>
-                <div class="font-body text-xs text-ink-400">Цілодобовий режим роботи</div>
+                <div class="font-body text-xs font-600 uppercase tracking-wider text-ink-400">Часы работы</div>
+                <div class="mt-0.5 font-body text-base font-500 text-ink-900">Ежедневно, 24 / 7</div>
+                <div class="font-body text-xs text-ink-400">Круглосуточный режим работы</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- ── Right: Contact form ── -->
         <div data-animate class="delay-200">
-          <div
-            class="rounded-3xl bg-white p-8"
-          >
-            <!-- Form header -->
+          <div class="rounded-3xl bg-white p-8">
             <div class="mb-7 flex items-center gap-4 border-b border-ivory-200 pb-6">
               <img
                 src="../assets/logo.png"
-                alt="Добре серце"
+                alt="Доброе сердце"
                 class="h-11 w-11"
               />
               <div>
-                <h3 class="font-display text-2xl font-600 text-ink-900">Напишіть нам</h3>
+                <h3 class="font-display text-2xl font-600 text-ink-900">Напишите нам</h3>
                 <p class="font-body text-xs text-ink-400">
-                  Відповімо протягом кількох годин
+                  Ответим в течение нескольких часов
                 </p>
               </div>
             </div>
 
-            <!-- Success state -->
             <Transition
               enter-active-class="transition duration-400 ease-out"
               enter-from-class="opacity-0 scale-95"
@@ -181,33 +171,32 @@ async function handleSubmit() {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
-                <h4 class="font-display text-2xl font-600 text-ink-900">Дякуємо!</h4>
+                <h4 class="font-display text-2xl font-600 text-ink-900">Спасибо!</h4>
                 <p class="mt-2 font-body text-sm text-ink-500">
-                  Ваше повідомлення надіслано. Ми зв'яжемося з вами найближчим часом.
+                  Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.
                 </p>
                 <button class="btn-outline mt-6" @click="isSubmitted = false">
-                  Надіслати ще одне
+                  Отправить ещё одно
                 </button>
               </div>
 
-              <!-- Form -->
               <form v-else novalidate class="space-y-[1.6rem]" @submit.prevent="handleSubmit">
                 <div>
                   <label for="name" class="mb-2 block font-body text-xs font-600 uppercase tracking-wider text-ink-500">
-                    Ваше ім'я *
+                    Ваше имя *
                   </label>
                   <input
                     id="name"
                     v-model="formData.name"
                     type="text"
-                    placeholder="Іван Іванович"
+                    placeholder="Иван Иванович"
                     required
                     class="form-input"
                   />
                 </div>
                 <div>
                   <label for="phone" class="mb-2 block font-body text-xs font-600 uppercase tracking-wider text-ink-500">
-                    Номер телефону *
+                    Номер телефона *
                   </label>
                   <input
                     id="phone"
@@ -220,13 +209,13 @@ async function handleSubmit() {
                 </div>
                 <div>
                   <label for="message" class="mb-2 block font-body text-xs font-600 uppercase tracking-wider text-ink-500">
-                    Ваше питання або побажання
+                    Ваш вопрос или пожелание
                   </label>
                   <textarea
                     id="message"
                     v-model="formData.message"
                     rows="4"
-                    placeholder="Розкажіть про свої потреби..."
+                    placeholder="Расскажите о своих потребностях..."
                     class="form-input resize-none"
                   />
                 </div>
@@ -245,11 +234,11 @@ async function handleSubmit() {
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                   </svg>
-                  {{ isSubmitting ? 'Надсилаємо...' : 'Надіслати повідомлення' }}
+                  {{ isSubmitting ? 'Отправляем...' : 'Отправить сообщение' }}
                 </button>
 
                 <p class="text-center font-body text-xs text-ink-400">
-                  Або зателефонуйте:
+                  Или позвоните:
                   <a href="tel:+380961462910" style="color: var(--color-brand-600);" class="hover:underline font-500">+38 096 146 29 10</a>
                 </p>
               </form>

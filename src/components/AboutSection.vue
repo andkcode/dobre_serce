@@ -2,15 +2,14 @@
 import logoRed from "../assets/logo-red.png"
 
 const missions = [
-  'Забезпечити якісний кваліфікований догляд за кожним постояльцем',
-  'Створити сприятливу атмосферу для проживання та дозвілля',
-  'Приділити кожній людині увагу, вислухати її, оточити турботою',
+  'Обеспечить качественный квалифицированный уход за каждым проживающим',
+  'Создать благоприятную атмосферу для проживания и досуга',
+  'Уделить каждому человеку внимание, выслушать его, окружить заботой',
 ]
 </script>
 
 <template>
   <section id="about" class="relative overflow-hidden bg-ivory-50 py-28 lg:py-36">
-    <!-- Background decorative elements -->
     <div
       class="pointer-events-none absolute right-0 top-0 h-96 w-96 translate-x-1/2 -translate-y-1/3 rounded-full opacity-40"
       style="background: radial-gradient(circle, var(--color-brand-50) 0%, transparent 70%);"
@@ -23,48 +22,41 @@ const missions = [
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
       <div class="grid items-center gap-16 lg:grid-cols-2 xl:gap-24">
 
-        <!-- ── Left: Image collage ── -->
         <div class="relative" data-animate>
-
-          <!-- Main large image -->
           <div class="relative overflow-hidden rounded-3xl shadow-lift">
             <img
               src="../assets/about/care.jpg"
-              alt="Персонал пансіонату доглядає за літньою людиною"
+              alt="Персонал пансионата ухаживает за пожилым человеком"
               class="h-[480px] w-full object-cover transition-transform duration-700 hover:scale-105"
             />
-            <!-- Subtle inner shadow -->
             <div
               class="absolute inset-0 rounded-3xl"
               style="box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);"
             />
           </div>
 
-          <!-- Small image top-right — overlapping -->
           <div
             class="absolute -right-6 top-8 hidden overflow-hidden rounded-2xl shadow-lift lg:block"
             style="width: 180px; height: 200px;"
           >
             <img
               src="../assets/about/hugs.jpg"
-              alt="Затишна кімната пансіонату"
+              alt="Уютная комната пансионата"
               class="h-full w-full object-cover"
             />
           </div>
 
-          <!-- Small image bottom-right -->
           <div
             class="absolute -bottom-8 -right-6 hidden overflow-hidden rounded-2xl shadow-lift lg:block"
             style="width: 160px; height: 160px;"
           >
             <img
               src="../assets/about/heart.jpg"
-              alt="Прогулянка на свіжому повітрі"
+              alt="Прогулка на свежем воздухе"
               class="h-full w-full object-cover"
             />
           </div>
 
-          <!-- ── Floating brand badge ── -->
           <div
             class="absolute -bottom-10 left-6 flex items-center gap-3 rounded-2xl px-5 py-4 shadow-brand-lg lg:-left-6"
             style="background: linear-gradient(135deg, var(--color-brand-700) 0%, var(--color-brand-600) 100%);"
@@ -72,18 +64,16 @@ const missions = [
             <div class="relative">
               <img
                 src="../assets/logo.png"
-                alt="Логотип Добре серце"
+                alt="Логотип Доброе сердце"
                 class="h-11 w-11 rounded-full bg-white/20 p-0.5 ring-1 ring-white/30"
               />
-              <span class="absolute -right-0.5 -top-0.5 h-3 w-3 animate-heartbeat rounded-full bg-emerald-400 ring-2 ring-brand-700" />
             </div>
             <div>
-              <div class="font-display text-lg font-600 leading-none text-white">Добре серце</div>
-              <div class="mt-0.5 font-body text-xs font-400 text-white/65">з турботою та любов'ю</div>
+              <div class="font-display text-lg font-600 leading-none text-white">Доброе сердце</div>
+              <div class="mt-0.5 font-body text-xs font-400 text-white/65">с заботой и любовью</div>
             </div>
           </div>
 
-          <!-- ── Experience badge ── -->
           <div
             class="glass absolute left-6 top-8 rounded-xl px-4 py-3 shadow-card lg:-left-8"
           >
@@ -94,34 +84,29 @@ const missions = [
               10+
             </div>
             <div class="mt-0.5 font-body text-xs font-500 uppercase tracking-wider text-ink-500">
-              Років досвіду
+              Лет опыта
             </div>
           </div>
         </div>
 
-        <!-- ── Right: Content ── -->
         <div data-animate class="delay-200 lg:pl-4">
-          <!-- Eyebrow -->
-          <div class="eyebrow mb-5">Про нас</div>
+          <div class="eyebrow mb-5">О нас</div>
 
-          <!-- Heading -->
           <h2 class="section-title mb-6 text-balance">
-            Наша місія —<br />
+            Наша миссия —<br />
             <em class="font-display italic font-400" style="color: var(--color-brand-600);">
-              ваш спокій та добробут
+              ваш покой и благополучие
             </em>
           </h2>
 
-          <!-- Gold divider -->
           <div class="gold-divider mb-8" />
 
           <p class="section-subtitle mb-8 leading-prose">
-            Обираючи пансіонат для людей похилого віку, важливо знайти місце,
-            де панує справжня турбота. У «Доброму серці» ми ставимо людину
-            на перше місце — перед нами стоять чіткі та важливі цілі:
+            Выбирая пансионат для пожилых людей, важно найти место,
+            где царит настоящая забота. В «Добром сердце» мы ставим
+            человека на первое место — перед нами стоят чёткие и важные цели:
           </p>
 
-          <!-- Mission list -->
           <ul class="mb-10 space-y-5">
             <li
               v-for="(mission, i) in missions"
@@ -143,26 +128,25 @@ const missions = [
           </ul>
 
           <p class="mb-10 font-body text-sm leading-loose text-ink-500">
-            Щоб змінити своє сприйняття будинку для людей похилого віку,
-            ми запрошуємо відвідати пансіонат особисто і поспілкуватися
-            з постояльцями та персоналом. У нас дідусі та бабусі продовжують
-            жити повноцінним активним життям.
+            Чтобы изменить своё восприятие дома для пожилых людей,
+            мы приглашаем посетить пансионат лично и пообщаться
+            с проживающими и персоналом. У нас дедушки и бабушки продолжают
+            жить полноценной активной жизнью.
           </p>
 
-          <!-- CTA -->
           <div class="flex flex-wrap items-center gap-4">
             <a href="tel:+380961462910" class="btn-primary">
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
               </svg>
-              Зв'язатися з нами
+              Связаться с нами
             </a>
             <a
               href="#services"
               class="btn-outline"
               @click.prevent="$el.ownerDocument.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })"
             >
-              Наші послуги
+              Наши услуги
             </a>
           </div>
         </div>

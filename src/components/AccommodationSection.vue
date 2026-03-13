@@ -11,45 +11,45 @@ interface AccommodationOption {
 const options: AccommodationOption[] = [
   {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>`,
-    title: 'Короткочасне розміщення',
-    subtitle: 'Подобово або на будь-який термін',
-    description: 'Ви можете розмістити своїх близьких подобово або на будь-який зручний для вас термін. Ідеально для відпочинку або відрядження.',
+    title: 'Кратковременное размещение',
+    subtitle: 'Посуточно или на любой срок',
+    description: 'Вы можете разместить своих близких посуточно или на любой удобный для вас срок. Идеально для отдыха или командировки.',
     gradient: 'from-amber-500 to-orange-600',
     iconBg: 'bg-amber-50',
   },
   {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>`,
-    title: 'Денне розміщення',
-    subtitle: 'Вдень тут, вночі — вдома',
-    description: 'За потреби ви можете розмістити свого близького на денний час, а на ніч забрати додому. Зручний варіант для зайнятих родин.',
+    title: 'Дневное размещение',
+    subtitle: 'Днём здесь, ночью — дома',
+    description: 'При необходимости вы можете разместить своего близкого на дневное время, а на ночь забрать домой. Удобный вариант для занятых семей.',
     gradient: 'from-brand-500 to-brand-700',
     iconBg: 'bg-brand-50',
   },
   {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>`,
-    title: 'Цілодобове розміщення',
-    subtitle: 'Повний кваліфікований догляд',
-    description: "Якщо у вас немає можливості забезпечити близьким кваліфікований догляд, ми візьмемо цей обов'язок на себе цілодобово.",
+    title: 'Круглосуточное размещение',
+    subtitle: 'Полный квалифицированный уход',
+    description: 'Если у вас нет возможности обеспечить близким квалифицированный уход, мы возьмём эту обязанность на себя круглосуточно.',
     gradient: 'from-rose-500 to-pink-600',
     iconBg: 'bg-rose-50',
   },
 ]
 
 const accepted = [
-  'Здорові люди похилого віку',
-  'Лежачі хворі похилого віку',
-  'Люди після травм та переломів (у т.ч. перелому шийки стегна)',
-  'Люди, які перенесли інсульт або інфаркт',
-  'Люди з хворобою Альцгеймера',
-  'Літні люди зі старечою деменцією',
-  'Люди похилого віку після операцій',
+  'Здоровые пожилые люди',
+  'Лежачие больные пожилого возраста',
+  'Люди после травм и переломов (в т.ч. перелома шейки бедра)',
+  'Люди, перенёсшие инсульт или инфаркт',
+  'Люди с болезнью Альцгеймера',
+  'Пожилые люди со старческой деменцией',
+  'Пожилые люди после операций',
 ]
 
 const notAccepted = [
-  '4-я стадія онкологічного захворювання',
-  'Гепатит B або C',
-  'Інфекційні захворювання',
-  'Виражена агресивна поведінка',
+  '4-я стадия онкологического заболевания',
+  'Гепатит B или C',
+  'Инфекционные заболевания',
+  'Выраженное агрессивное поведение',
 ]
 </script>
 
@@ -57,16 +57,14 @@ const notAccepted = [
   <section id="accommodation" class="bg-ivory-50 py-28 lg:py-36">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
-      <!-- ── Header ── -->
       <div class="mb-16 text-center" data-animate>
-        <div class="eyebrow mb-5 justify-center">Варіанти проживання</div>
+        <div class="eyebrow mb-5 justify-center">Варианты проживания</div>
         <h2 class="section-title mb-5">
-          Оберіть зручний<br />
-          <em class="font-display italic font-400" style="color: var(--color-brand-600);">формат проживання</em>
+          Выберите удобный<br />
+          <em class="font-display italic font-400" style="color: var(--color-brand-600);">формат проживания</em>
         </h2>
       </div>
 
-      <!-- ── Accommodation option cards ── -->
       <div class="mb-20 grid gap-7 md:grid-cols-3">
         <div
           v-for="(option, i) in options"
@@ -75,14 +73,11 @@ const notAccepted = [
           :class="`animation-delay-${i * 100}`"
           data-animate
         >
-          <!-- Gradient background on hover -->
           <div
             :class="`absolute inset-0 bg-gradient-to-br ${option.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`"
           />
 
-          <!-- Content (white by default, adapts on hover) -->
           <div class="relative z-10">
-            <!-- Icon -->
             <div
               :class="`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${option.iconBg} transition-colors duration-300 group-hover:bg-white/20`"
             >
@@ -111,17 +106,14 @@ const notAccepted = [
             </p>
           </div>
 
-          <!-- Decorative circle top-right -->
           <div
             class="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           />
         </div>
       </div>
 
-      <!-- ── Who we accept / contraindications ── -->
       <div class="grid gap-8 lg:grid-cols-2" data-animate>
 
-        <!-- Accept -->
         <div
           class="rounded-3xl border p-8 transition-all duration-300 hover:shadow-card"
           style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-color: #bbf7d0;"
@@ -136,8 +128,8 @@ const notAccepted = [
               </svg>
             </div>
             <div>
-              <h3 class="font-display text-2xl font-600 text-ink-900">Кого ми приймаємо</h3>
-              <p class="font-body text-xs text-ink-400">Повний перелік станів та діагнозів</p>
+              <h3 class="font-display text-2xl font-600 text-ink-900">Кого мы принимаем</h3>
+              <p class="font-body text-xs text-ink-400">Полный перечень состояний и диагнозов</p>
             </div>
           </div>
           <ul class="space-y-3">
@@ -163,7 +155,6 @@ const notAccepted = [
           </ul>
         </div>
 
-        <!-- Contraindications -->
         <div
           class="rounded-3xl border p-8 transition-all duration-300 hover:shadow-card"
           style="background: linear-gradient(135deg, #fff5f5, #ffe4e4); border-color: #fecaca;"
@@ -178,8 +169,8 @@ const notAccepted = [
               </svg>
             </div>
             <div>
-              <h3 class="font-display text-2xl font-600 text-ink-900">Протипоказання</h3>
-              <p class="font-body text-xs text-ink-400">Випадки, що потребують спеціалізованої допомоги</p>
+              <h3 class="font-display text-2xl font-600 text-ink-900">Противопоказания</h3>
+              <p class="font-body text-xs text-ink-400">Случаи, требующие специализированной помощи</p>
             </div>
           </div>
           <ul class="mb-6 space-y-3">
@@ -204,7 +195,7 @@ const notAccepted = [
             </li>
           </ul>
           <p class="font-body text-xs leading-relaxed" style="color: #b91c1c; opacity: 0.7;">
-            * На жаль, ми не в змозі надати спеціалізовану допомогу у перелічених випадках. Для уточнення — телефонуйте нам.
+            * К сожалению, мы не в состоянии предоставить специализированную помощь в перечисленных случаях. Для уточнения — звоните нам.
           </p>
         </div>
       </div>
