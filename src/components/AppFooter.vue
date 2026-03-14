@@ -16,7 +16,7 @@ function scrollTo(href: string) {
 </script>
 
 <template>
-  <footer style="background: var(--color-ink-900);" class="relative overflow-hidden">
+  <footer style="background: #1a2744;" class="relative overflow-hidden">
     <div
       class="absolute left-0 right-0 top-0 h-px"
       style="background: linear-gradient(90deg, transparent 0%, var(--color-gold-400) 30%, var(--color-brand-500) 70%, transparent 100%);"
