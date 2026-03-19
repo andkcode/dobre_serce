@@ -45,7 +45,7 @@ async function handleSubmit() {
         <div data-animate>
           <div class="mb-8 overflow-hidden rounded-3xl shadow-lift ring-1 ring-ink-100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2577.8!2d28.468!3d49.233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVmlubml0c2lh!5e0!3m2!1suk!2sua!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.541181548874!2d71.42291657698297!3d51.172247635131455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424580d55804208f%3A0x8eeb11fd4356cb6!2z0L_RgNC-0YHQvy4g0KDQtdGB0L_Rg9Cx0LvQuNC60LgsIDAyMDAwMCDQkNGB0YLQsNC90LAsINCa0LDQt9Cw0YXRgdGC0LDQvQ!5e0!3m2!1sru!2spl!4v1773859914767!5m2!1sru!2spl"
               width="100%"
               height="260"
               style="border: 0; filter: sepia(0.12) contrast(1.05);"
@@ -58,7 +58,7 @@ async function handleSubmit() {
 
           <div class="space-y-4">
             <a
-              href="https://maps.google.com/?q=ул.+Митрополита+Петра+Могилы,+6А,+Винница"
+              href="https://maps.app.goo.gl/RrKjbFp21wWgB1MM9"
               target="_blank"
               rel="noopener noreferrer"
               class="group flex items-start gap-4 rounded-2xl border border-ivory-200 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-100 hover:shadow-card"
@@ -79,10 +79,10 @@ async function handleSubmit() {
               <div>
                 <div class="font-body text-xs font-600 uppercase tracking-wider text-ink-400">Адрес</div>
                 <div class="mt-0.5 font-body text-base font-500 text-ink-900">
-                  Украина, г. Винница
+                  Казахстан, г. Астана
                 </div>
                 <div class="font-body text-sm text-ink-500">
-                  ул. Митрополита Петра Могилы, 6А
+                  просп. Республики
                 </div>
               </div>
               <svg class="ml-auto mt-1 h-4 w-4 flex-shrink-0 text-ink-300 transition-colors duration-200 group-hover:text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -202,7 +202,7 @@ async function handleSubmit() {
                     id="phone"
                     v-model="formData.phone"
                     type="tel"
-                    placeholder="+38 0__ ___ __ __"
+                    placeholder="+7 ___ ___ ____"
                     required
                     class="form-input"
                   />

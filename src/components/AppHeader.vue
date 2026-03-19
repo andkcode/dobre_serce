@@ -41,7 +41,7 @@ function scrollToTop() {
         <div style="
           position: absolute;
           top: -5px;
-          left: 43%;
+          left: 38%;
           transform: translateX(-50%);
           font-family: var(--font-family-body, system-ui, sans-serif);
           font-size: 0.70rem;
@@ -53,7 +53,7 @@ function scrollToTop() {
           pointer-events: none;
         ">Астана</div>
         <img
-          src="../assets/dobre_serce.svg"
+          src="../assets/dobroe_serdce.png"
           alt="Логотип Доброе сердце"
           class="ds-logo__img"
         />
@@ -206,7 +206,7 @@ function scrollToTop() {
 .ds-logo__img-wrap { position: relative; flex-shrink: 0; }
 
 .ds-logo__img {
-  height: 44px;
+  height: 40px;
   width: auto;
   object-fit: contain;
 }

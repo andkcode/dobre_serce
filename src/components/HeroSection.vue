@@ -72,25 +72,9 @@ function scrollTo(id: string) {
     <div class="relative z-10 mx-auto w-full max-w-7xl px-6 py-28 lg:px-8 xl:px-16">
       <div class="max-w-3xl">
 
-        <!-- Badge pill -->
-        <div
-          class="mb-8 animate-fade-in inline-flex items-center gap-2.5 rounded-full px-4 py-2 glass-dark"
-        >
-          <div class="relative">
-            <img
-              src="../assets/logo.png"
-              alt="Логотип Доброе сердце"
-              class="h-6 w-6 rounded-full ring-1 ring-white/20"
-            />
-          </div>
-          <span class="font-body text-xs font-500 tracking-widest text-white/80 uppercase">
-            Пансионат «Добре сердце» · Астана, Казахстан
-          </span>
-        </div>
-
         <!-- Headline -->
         <h1
-          class="delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-balance"
+          class="delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-balance text-center lg:text-left"
           style="font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: 700; line-height: 1.08;"
         >
           Комфорт и забота<br />
@@ -113,7 +97,7 @@ function scrollTo(id: string) {
         >
           Наш пансионат — место, где каждый проживающий чувствует себя
           дома: тёплая атмосфера, специалисты рядом и полноценная
-          активная жизнь под заботливым надзором.
+          активная жизнь под заботливым присмотром.
         </p>
 
         <!-- Stats row -->

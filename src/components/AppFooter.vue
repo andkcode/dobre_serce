@@ -28,37 +28,39 @@ function scrollTo(href: string) {
 
     <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
       <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-
-      <div style="position: relative; display: inline-block;">
-          <div style="
-            position: absolute;
-            top: -5px;
-            left: 41%;
-            transform: translateX(-50%);
-            font-family: var(--font-family-body, system-ui, sans-serif);
-            font-size: 0.70rem;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--color-gold-400, #DAA532);
-            white-space: nowrap;
-            pointer-events: none;
-          ">Астана</div>
+      <div>
+      <div class="ds-logo__img-wrap" style="position: relative; display: inline-block; width: fit-content;">
+        <div style="
+          position: absolute;
+          top: -5px;
+          left: 38%;
+          transform: translateX(-50%);
+          font-family: var(--font-family-body, system-ui, sans-serif);
+          font-size: 0.70rem;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--color-gold-400, #DAA532);
+          white-space: nowrap;
+          pointer-events: none;
+        ">Астана</div>
           <img
-            src="../assets/dobre_serce.svg"
+            src="../assets/dobroe_serdce.png"
             alt="Логотип Доброе сердце"
-            style="height: 52px; width: auto;"
+            class="ds-logo__img"
+            style="height: 44px; width: auto; display: block;"
           />
-          <div>
+          </div>
+            <div class="mt-3">
             <div class="font-body text-xs font-400 tracking-widest text-white/35 uppercase">
               Пансионат для пожилых людей
             </div>
-          </div>
           <p class="mb-7 font-body text-sm font-300 leading-prose text-white/45">
             Частный комфортабельный пансионат «Доброе сердце» обеспечивает
-            круглосуточный квалифицированный уход за пожилыми людьми в Виннице
+            круглосуточный квалифицированный уход за пожилыми людьми в Астане
             с индивидуальным подходом к каждому проживающему.
           </p>
+          </div>
           <a
             href="tel:+380961462910"
             class="inline-flex items-center gap-2 transition-colors duration-200"
@@ -99,7 +101,7 @@ function scrollTo(href: string) {
             <div>
               <div class="font-body text-sm font-500 text-white/70">🇰🇿 Казахстан, г. Астана</div>
               <div class="mt-0.5 font-body text-sm text-white/40">
-                ул. Митрополита Петра Могилы, 6А
+                просп. Республики
               </div>
             </div>
             <div>
@@ -142,3 +144,16 @@ function scrollTo(href: string) {
     </div>
   </footer>
 </template>
+<style scoped>
+.ds-logo__img-wrap { 
+  position: relative; 
+  flex-shrink: 0; 
+  display: inline-block;
+  width: fit-content;
+}
+.ds-logo__img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+</style>
