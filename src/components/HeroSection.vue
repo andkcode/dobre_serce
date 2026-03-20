@@ -33,11 +33,6 @@ function scrollTo(id: string) {
         class="absolute inset-0 opacity-[0.03]"
         style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><filter id=%22n%22><feTurbulence baseFrequency=%220.9%22 numOctaves=%224%22/><feColorMatrix type=%22saturate%22 values=%220%22/></filter><rect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22 opacity=%221%22/></svg>')"
       />
-      <!-- Decorative fine dot grid (very subtle) -->
-      <div
-        class="absolute inset-0 opacity-[0.06]"
-        style="background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 36px 36px;"
-      />
     </div>
 
     <!-- ── Floating orbs ── -->
@@ -70,12 +65,12 @@ function scrollTo(id: string) {
 
     <!-- ── Main content ── -->
     <div class="relative z-10 mx-auto w-full max-w-7xl px-6 py-28 lg:px-8 xl:px-16">
-      <div class="max-w-3xl">
+      <div class="lg:max-w-3xl">
 
         <!-- Headline -->
         <h1
-          class="delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-balance text-center lg:text-left"
-          style="font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: 700; line-height: 1.08;"
+          class="delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-center lg:text-left w-full"
+          style="font-size: clamp(2.3rem, 5.5vw, 5.5rem); font-weight: 700; line-height: 1.05;"
         >
           Комфорт и забота<br />
           <em
@@ -123,7 +118,7 @@ function scrollTo(id: string) {
               class="font-display font-700 text-white"
               style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;"
             >
-              5×
+              4×
             </div>
             <div class="font-body text-xs font-400 uppercase tracking-widest text-white/50">
               Питание в день

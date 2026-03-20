@@ -29,23 +29,20 @@ const steps = [
 </script>
 
 <template>
-  <section id="price" class="relative overflow-hidden bg-ivory-50 py-28 lg:py-36">
-    <!-- Subtle texture -->
+  <section id="price" class="relative overflow-hidden bg-ivory-50 py-16 lg:py-36">
     <div
       class="pointer-events-none absolute inset-0 opacity-[0.35]"
       style="background-image: radial-gradient(circle, var(--color-ink-200) 1px, transparent 1px); background-size: 36px 36px;"
     />
 
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="grid items-center gap-16 lg:grid-cols-2 xl:gap-24">
+      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-24">
 
-        <!-- ── Left: Visual price card ── -->
         <div class="relative" data-animate>
           <div
-            class="relative overflow-hidden rounded-3xl p-10 shadow-lift"
+            class="relative overflow-hidden rounded-3xl p-6 sm:p-10 shadow-lift"
             style="background: linear-gradient(135deg, #1a3a5c 0%, #1e3058 60%, #162040 100%);"
           >
-            <!-- Decorative circles -->
             <div
               class="absolute -right-12 -top-12 h-48 w-48 rounded-full opacity-10"
               style="background: radial-gradient(circle, var(--color-gold-400) 0%, transparent 70%);"
@@ -55,7 +52,6 @@ const steps = [
               style="background: radial-gradient(circle, var(--color-brand-500) 0%, transparent 70%);"
             />
 
-            <!-- Logo watermark -->
             <img
               src="../assets/logo.png"
               alt=""
@@ -66,13 +62,12 @@ const steps = [
               <div class="mb-2 font-body text-xs font-600 uppercase tracking-[0.2em] text-white/40">
                 Стоимость проживания
               </div>
-              <div
-                class="mb-2 font-display font-700 text-white"
-                style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1;"
-              >
-                Индивидуально
-              </div>
-              <!-- Gold underline -->
+                <div
+                  class="mb-2 font-display font-700 text-white"
+                  style="font-size: clamp(1.8rem, 8vw, 4rem); line-height: 1;"
+                >
+                  Индивидуально
+                </div>
               <div
                 class="mb-7 h-0.5 w-16"
                 style="background: linear-gradient(90deg, var(--color-gold-400), transparent);"
@@ -84,8 +79,7 @@ const steps = [
                 с учётом их потребностей и выбранного формата.
               </p>
 
-              <!-- Factor grid -->
-              <div class="grid grid-cols-2 gap-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div
                   v-for="factor in factors"
                   :key="factor.label"
@@ -104,7 +98,6 @@ const steps = [
             </div>
           </div>
 
-          <!-- Floating CTA badge -->
           <div
             class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-5 py-2.5 shadow-brand"
             style="background: var(--color-brand-600);"
@@ -115,10 +108,9 @@ const steps = [
           </div>
         </div>
 
-        <!-- ── Right: Content & steps ── -->
-        <div data-animate class="delay-200">
+        <div data-animate class="delay-200 mt-8 lg:mt-0">
           <div class="eyebrow mb-5">Цена</div>
-          <h2 class="section-title mb-6">
+          <h2 class="section-title mb-6" style="font-size: min(7vw, 3.4rem);">
             Прозрачное ценообразование<br />
             <em class="font-display italic font-400" style="color: var(--color-brand-600);">для каждой семьи</em>
           </h2>
@@ -130,7 +122,6 @@ const steps = [
             узнать о наличии свободных мест.
           </p>
 
-          <!-- Steps -->
           <ol class="mb-10 space-y-5">
             <li
               v-for="step in steps"
@@ -150,7 +141,7 @@ const steps = [
               </p>
 
               <div
-                class="h-px flex-1 bg-ivory-200 transition-all duration-300 group-hover:bg-brand-100"
+                class="h-px flex-1 bg-ivory-200 transition-all duration-300 group-hover:bg-brand-100 hidden sm:block"
               />
             </li>
           </ol>
@@ -165,6 +156,7 @@ const steps = [
             <div class="font-body text-sm text-ink-400">+38 096 146 29 10</div>
           </div>
         </div>
+
       </div>
     </div>
   </section>

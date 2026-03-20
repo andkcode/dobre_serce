@@ -94,7 +94,7 @@ const missions = [
 
           <h2 class="section-title mb-6 text-balance">
             Наша миссия —<br />
-            <em class="font-display italic font-400" style="color: var(--color-brand-600);">
+            <em class="font-display italic font-400 whitespace-nowrap" style="color: var(--color-brand-600); font-size: clamp(1.7rem, 4vw, 2.3rem);">
               ваш покой и благополучие
             </em>
           </h2>
