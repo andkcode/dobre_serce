@@ -17,15 +17,37 @@ function scrollTo(id: string) {
 </script>
 
 <template>
-  <section class="relative flex min-h-screen items-center overflow-hidden" aria-label="Главный баннер">
+
+  <section
+    class="relative flex min-h-screen items-center overflow-hidden"
+    aria-label="Главный баннер"
+  >
+    <!-- ── Layered background ── -->
     <div class="absolute inset-0">
-      <video autoplay muted loop playsinline preload="auto" class="h-full w-full object-cover hero-video">
+      <video
+        autoplay muted loop playsinline preload="auto"
+        class="h-full w-full object-cover hero-video"
+      >
         <source :src="gardenMobile" media="(max-width: 767px)" type="video/mp4" />
         <source :src="garden" type="video/mp4" />
       </video>
+      <!-- Multi-layer gradient for depth -->
       <div class="absolute inset-0 bg-hero-gradient" />
-      <div class="absolute bottom-0 left-0 right-0 h-2/3" style="background: linear-gradient(to top, rgba(0,19,46,0.65) 0%, transparent 100%)" />
-      <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><filter id=%22n%22><feTurbulence baseFrequency=%220.9%22 numOctaves=%224%22/><feColorMatrix type=%22saturate%22 values=%220%22/></filter><rect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22 opacity=%221%22/></svg>')" />
+      <!-- Warm vignette bottom -->
+      <div
+        class="absolute bottom-0 left-0 right-0 h-2/3"
+        style="background: linear-gradient(to top, rgba(15,13,11,0.65) 0%, transparent 100%)"
+      />
+      <!-- Subtle noise texture overlay -->
+      <div
+        class="absolute inset-0 opacity-[0.03]"
+        style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><filter id=%22n%22><feTurbulence baseFrequency=%220.9%22 numOctaves=%224%22/><feColorMatrix type=%22saturate%22 values=%220%22/></filter><rect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22 opacity=%221%22/></svg>')"
+      />
+      <!-- Decorative fine dot grid (very subtle) -->
+      <div
+        class="absolute inset-0 opacity-[0.06]"
+        style="background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 36px 36px;"
+      />
     </div>
 
     <!-- Orb 1: brand-500 gold (was #dcc07e warm gold — unified) -->
@@ -93,7 +115,7 @@ function scrollTo(id: string) {
         </div>
 
         <div class="delay-400 animate-fade-up mt-11 flex flex-wrap items-center gap-4">
-          <button class="btn-primary" @click="scrollTo('#contacts')">
+          <button class="btn-primary bg-[#E6A701]" @click="scrollTo('#contacts')">
             Записаться в пансионат
             <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

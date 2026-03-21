@@ -93,10 +93,9 @@ const steps = [
 
           <!-- badge: sapphire-700 (was brand-600 gold — CTA badge should be sapphire) -->
           <div
-            class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-5 py-2.5 shadow-sapphire"
-            style="background: var(--color-sapphire-700);"
+            class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-5 py-2.5 shadow-sapphire bg-[#E6A701]"
           >
-            <span class="font-body text-xs font-600 uppercase tracking-widest text-white">Звонок бесплатный</span>
+            <span class="font-body text-xs font-600 uppercase tracking-widest text-white ">Звонок бесплатный</span>
           </div>
         </div>
 

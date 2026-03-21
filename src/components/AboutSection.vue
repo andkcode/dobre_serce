@@ -60,13 +60,13 @@ const missions = [
           <!-- Badge: sapphire-700 → sapphire-800 gradient (was brand-700→brand-600 gold) -->
           <div
             class="absolute -bottom-10 left-6 flex items-center gap-3 rounded-2xl px-5 py-4 shadow-lift lg:-left-6"
-            style="background: linear-gradient(135deg, var(--color-sapphire-800) 0%, var(--color-sapphire-700) 100%);"
+            style="background: linear-gradient(135deg, var(--color-yellow-800) 0%, var(--color-yellow-700) 100%);"
           >
             <div class="relative">
               <img
                 src="../assets/logo.png"
                 alt="Логотип Доброе сердце"
-                class="h-11 w-11 rounded-full bg-white/20 p-0.5 ring-1 ring-white/30"
+                class="h-11 w-11 rounded-full bg-white p-1 ring-1 ring-white/30"
               />
             </div>
             <div>

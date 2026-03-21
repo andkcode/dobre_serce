@@ -24,7 +24,7 @@ function scrollTo(href: string) {
 </script>
 
 <template>
-  <footer style="background: var(--color-sapphire-800)" class="relative overflow-hidden">
+  <footer style="background: var(--color-yellow-800)" class="relative overflow-hidden">
     <!-- top accent line: brand-500 gold -->
     <div
       class="absolute left-0 right-0 top-0 h-px"

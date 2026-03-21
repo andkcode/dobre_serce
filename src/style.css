@@ -592,10 +592,10 @@
   .bg-hero-gradient {
     background: linear-gradient(
       160deg,
-      rgba(0,  19,  46, 0.88) 0%,
-      rgba(0,  36,  85, 0.76) 30%,
-      rgba(0,  99, 181, 0.52) 62%,
-      rgba(249,189,  21, 0.18) 100%
+      rgba(7,   15,  31,  0.82) 0%,    /* sapphire-950 */
+      rgba(14,  32,  64,  0.68) 35%,   /* sapphire-900 */
+      rgba(26,  58,  92,  0.50) 65%,   /* sapphire-800 */
+      rgba(184, 104, 64,  0.20) 100%   /* brand-600    */
     );
   }
 
