@@ -50,7 +50,7 @@ async function handleSubmit() {
         </p>
       </div>
 
-      <div class="grid gap-12 lg:grid-cols-2">
+      <div class="grid gap-12 lg:grid-cols-1">
 
         <div data-animate>
           <div class="mb-8 overflow-hidden rounded-3xl shadow-lift ring-1 ring-ink-100">
@@ -66,12 +66,12 @@ async function handleSubmit() {
             />
           </div>
 
-          <div class="space-y-4">
+          <div class="space-y-2">
             <!-- Address card -->
             <a
               href="https://maps.app.goo.gl/RrKjbFp21wWgB1MM9"
               target="_blank" rel="noopener noreferrer"
-              class="group flex items-start gap-4 rounded-2xl border border-ivory-200 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-100 hover:shadow-card"
+              class="group flex items-center gap-4 rounded-2xl border border-ivory-200 bg-white p-2 px-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-100 hover:shadow-card"
             >
               <div
                 class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl transition-colors duration-300 group-hover:bg-sapphire-700"
@@ -99,7 +99,7 @@ async function handleSubmit() {
             <!-- Phone card -->
             <a
               href="tel:+380961462910"
-              class="group flex items-start gap-4 rounded-2xl border border-ivory-200 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-100 hover:shadow-card"
+              class="group flex items-center gap-4 rounded-2xl border border-ivory-200 bg-white p-2 px-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-100 hover:shadow-card"
             >
               <div
                 class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl transition-colors duration-300 group-hover:bg-sapphire-700"
@@ -127,7 +127,7 @@ async function handleSubmit() {
             </a>
 
             <!-- Hours card -->
-            <div class="flex items-start gap-4 rounded-2xl border border-ivory-200 bg-white p-5">
+            <div class="flex items-center gap-4 rounded-2xl border border-ivory-200 bg-white p-2 px-4">
               <div
                 class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl"
                 style="background: var(--color-sapphire-100);"
@@ -148,70 +148,7 @@ async function handleSubmit() {
             </div>
           </div>
         </div>
-
-        <div data-animate class="delay-200">
-          <div class="rounded-3xl bg-white p-8">
-            <div class="mb-7 flex items-center gap-4 border-b border-ivory-200 pb-6">
-              <img src="../assets/logo.png" alt="Доброе сердце" class="h-11 w-11" />
-              <div>
-                <h3 class="font-display text-2xl font-600 text-ink-900">Напишите нам</h3>
-                <p class="font-body text-xs text-ink-400">Ответим в течение нескольких часов</p>
-              </div>
-            </div>
-
-            <Transition
-              enter-active-class="transition duration-400 ease-out"
-              enter-from-class="opacity-0 scale-95"
-              enter-to-class="opacity-100 scale-100"
-            >
-              <div
-                v-if="isSubmitted"
-                class="flex flex-col items-center rounded-2xl p-10 text-center"
-                style="background: linear-gradient(135deg, var(--color-sage-50), var(--color-sage-100));"
-              >
-                <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full" style="background: var(--color-sage-100);">
-                  <svg class="h-8 w-8" style="color: var(--color-sage-600);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                </div>
-                <h4 class="font-display text-2xl font-600 text-ink-900">Спасибо!</h4>
-                <p class="mt-2 font-body text-sm text-ink-500">
-                  Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.
-                </p>
-                <button class="btn-outline mt-6" @click="isSubmitted = false">Отправить ещё одно</button>
-              </div>
-
-              <form v-else novalidate class="space-y-[1.6rem]" @submit.prevent="handleSubmit">
-                <div>
-                  <label for="name" class="mb-2 block font-body text-xs font-600 uppercase tracking-wider text-ink-500">Ваше имя *</label>
-                  <input id="name" v-model="formData.name" type="text" placeholder="Иван Иванович" required class="form-input" />
-                </div>
-                <div>
-                  <label for="phone" class="mb-2 block font-body text-xs font-600 uppercase tracking-wider text-ink-500">Номер телефона *</label>
-                  <input id="phone" v-model="formData.phone" type="tel" placeholder="+7 ___ ___ ____" required class="form-input" />
-                </div>
-                <div>
-                  <label for="message" class="mb-2 block font-body text-xs font-600 uppercase tracking-wider text-ink-500">Ваш вопрос или пожелание</label>
-                  <textarea id="message" v-model="formData.message" rows="4" placeholder="Расскажите о своих потребностях..." class="form-input resize-none" />
-                </div>
-
-                <button type="submit" :disabled="isSubmitting" class="btn-primary w-full justify-center">
-                  <svg v-if="isSubmitting" class="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                  </svg>
-                  {{ isSubmitting ? 'Отправляем...' : 'Отправить сообщение' }}
-                </button>
-
-                <p class="text-center font-body text-xs text-ink-400">
-                  Или позвоните:
-                  <a href="tel:+380961462910" style="color: var(--color-brand-500);" class="hover:underline font-500">+38 096 146 29 10</a>
-                </p>
-              </form>
-            </Transition>
-          </div>
         </div>
       </div>
-    </div>
   </section>
 </template>
