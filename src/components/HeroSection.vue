@@ -43,11 +43,6 @@ function scrollTo(id: string) {
         class="absolute inset-0 opacity-[0.03]"
         style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><filter id=%22n%22><feTurbulence baseFrequency=%220.9%22 numOctaves=%224%22/><feColorMatrix type=%22saturate%22 values=%220%22/></filter><rect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22 opacity=%221%22/></svg>')"
       />
-      <!-- Decorative fine dot grid (very subtle) -->
-      <div
-        class="absolute inset-0 opacity-[0.06]"
-        style="background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 36px 36px;"
-      />
     </div>
 
     <!-- Orb 1: brand-500 gold (was #dcc07e warm gold — unified) -->

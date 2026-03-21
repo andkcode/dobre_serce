@@ -590,13 +590,13 @@
    * создаёт глубину и сохраняет читаемость текста.
    */
   .bg-hero-gradient {
-    background: linear-gradient(
-      160deg,
-      rgba(7,   15,  31,  0.82) 0%,    /* sapphire-950 */
-      rgba(14,  32,  64,  0.68) 35%,   /* sapphire-900 */
-      rgba(26,  58,  92,  0.50) 65%,   /* sapphire-800 */
-      rgba(184, 104, 64,  0.20) 100%   /* brand-600    */
-    );
+      background: linear-gradient(
+  160deg,
+  rgba(10,  9,   2,   0.90) 0%,    /* yellow-950 */
+  rgba(22,  19,  4,   0.80) 35%,   /* yellow-900 */
+  rgba(58,  49,  9,   0.65) 65%,   /* yellow-800 */
+  rgba(160, 130, 28,  0.12) 100%   /* yellow-600 */
+      );
   }
 
   /*
