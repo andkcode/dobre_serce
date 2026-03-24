@@ -92,7 +92,7 @@ function scrollTo(id: string) {
           активная жизнь под заботливым присмотром.
         </p>
 
-        <div class="delay-300 animate-fade-up mt-12 flex flex-wrap gap-8">
+        <div class="delay-300 animate-fade-up mt-12 flex flex-wrap flex-col lg:flex-nowrap lg:flex-row gap-8">
           <div v-for="stat in stats" :key="stat.value" class="flex flex-col gap-1">
             <div class="font-display font-700 text-white" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">{{ stat.value }}</div>
             <div class="font-body text-xs font-400 uppercase tracking-widest text-white/50">{{ stat.label }}</div>
