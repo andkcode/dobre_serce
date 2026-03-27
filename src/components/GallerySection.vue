@@ -44,7 +44,7 @@ function nextImage() { activeIndex.value = (activeIndex.value + 1) % images.leng
 </script>
 
 <template>
-  <section id="gallery" class="relative overflow-hidden py-28 lg:py-36" style="">
+  <section id="gallery" class="relative overflow-hidden py-20 lg:py-32" style="">
     <div class="pointer-events-none absolute inset-0 opacity-[0.03]"
       style="background-image: radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px); background-size: 32px 32px;" />
     <!-- top gold line: brand-500 (was gold-400) -->
@@ -61,7 +61,7 @@ function nextImage() { activeIndex.value = (activeIndex.value + 1) % images.leng
           </span>
           <div class="h-px w-8" style="background: var(--color-brand-500);" />
         </div>
-        <h2 class="font-display font-700 " style="font-size: clamp(2rem, 4vw, 3rem);">
+        <h2 class="section-title">
           Взгляните на наш<br />
           <!-- italic em: brand-400 (was gold-300) -->
           <em class="font-display italic font-400" style="color: var(--color-brand-400);">уютный пансионат</em>

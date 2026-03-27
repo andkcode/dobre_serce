@@ -9,7 +9,7 @@ const missions = [
 </script>
 
 <template>
-  <section id="about" class="relative overflow-hidden bg-ivory-50 py-28 lg:py-36">
+  <section id="about" class="relative overflow-hidden bg-ivory-50 py-20 lg:py-32">
     <div
       class="pointer-events-none absolute right-0 top-0 h-96 w-96 translate-x-1/2 -translate-y-1/3 rounded-full opacity-40"
       style="background: radial-gradient(circle, var(--color-sapphire-50) 0%, transparent 70%);"
@@ -27,7 +27,7 @@ const missions = [
             <img
               src="../assets/about/care.jpg"
               alt="Персонал пансионата ухаживает за пожилым человеком"
-              class="h-[480px] w-full object-cover transition-transform duration-700 hover:scale-105"
+              class="h-[380px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[460px]"
             />
             <div
               class="absolute inset-0 rounded-3xl"
@@ -59,8 +59,8 @@ const missions = [
 
           <!-- Badge: sapphire-700 → sapphire-800 gradient (was brand-700→brand-600 gold) -->
           <div
-            class="absolute -bottom-10 left-6 flex items-center gap-3 rounded-2xl px-5 py-4 shadow-lift lg:-left-6"
-            style="background: #E6A701"
+            class="absolute -bottom-8 left-4 flex items-center gap-3 rounded-2xl px-4 py-3 shadow-lift lg:-left-6"
+            style="background: linear-gradient(135deg, var(--color-sapphire-700), var(--color-sapphire-800));"
           >
             <div class="relative">
               <img
@@ -97,7 +97,7 @@ const missions = [
           <h2 class="section-title mb-6 text-balance">
             Наша миссия —<br />
             <!-- Italic accent: brand-500 gold (warm, joyful) -->
-            <em class="font-display italic font-400 whitespace-nowrap" style="color: var(--color-brand-500); font-size: clamp(1.7rem, 4vw, 2.3rem);">
+            <em class="font-display italic font-400" style="color: var(--color-brand-500); font-size: clamp(1.6rem, 4vw, 2.3rem);">
               ваш покой и благополучие
             </em>
           </h2>

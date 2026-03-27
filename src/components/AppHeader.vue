@@ -38,7 +38,7 @@ function scrollToSection(href: string) {
     :class="{ 'ds-header--scrolled': isScrolled }"
     role="banner"
   >
-    <div class="ds-header__streak" aria-hidden="true" />
+
     <div class="ds-header__bg" aria-hidden="true" />
 
     <nav class="ds-header__nav" aria-label="Главная навигация">
@@ -201,24 +201,7 @@ function scrollToSection(href: string) {
   pointer-events: none;
 }
 
-/* streak: sapphire-600 left → brand-500 gold center → sapphire-600 right */
-.ds-header__streak {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: calc(var(--s) * 2px);
-  opacity: var(--s);
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-sapphire-600) 20%,
-    var(--color-brand-500) 50%,
-    var(--color-sapphire-600) 80%,
-    transparent 100%
-  );
-  transition: height var(--dur) var(--ease), opacity var(--dur) var(--ease);
-  pointer-events: none;
-  z-index: 1;
-}
+
 
 .ds-header__nav {
   position: relative;

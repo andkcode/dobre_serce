@@ -69,11 +69,11 @@ function scrollTo(id: string) {
       <div class="h-20 w-px bg-gradient-to-b from-white/40 via-white/20 to-transparent" />
     </div>
 
-    <div class="relative z-10 mx-auto w-full max-w-7xl px-6 py-28 lg:px-8 xl:px-16">
+    <div class="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 lg:px-8 lg:py-28 xl:px-16">
       <div class="lg:max-w-3xl">
 
         <h1 class="delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-center lg:text-left w-full"
-          style="font-size: clamp(2.3rem, 5.5vw, 5.5rem); font-weight: 700; line-height: 1.05;"
+          style="font-size: clamp(1.95rem, 8.2vw, 5.5rem); font-weight: 700; line-height: 1.05;"
         >
           Комфорт и забота<br />
           <!-- italic gold: brand-500 (was #dcc07e) -->
@@ -92,7 +92,7 @@ function scrollTo(id: string) {
           активная жизнь под заботливым присмотром.
         </p>
 
-        <div class="delay-300 animate-fade-up mt-12 flex justify-start flex-row gap-8">
+        <div class="delay-300 animate-fade-up mt-10 flex flex-wrap items-start gap-5 sm:mt-12 sm:gap-8">
           <div v-for="stat in stats" :key="stat.value" class="flex flex-col gap-1">
             <div class="font-display font-700 text-white" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">{{ stat.value }}</div>
             <div class="font-body text-xs font-400 uppercase tracking-widest text-white/50">{{ stat.label }}</div>
@@ -104,7 +104,7 @@ function scrollTo(id: string) {
           </div>
         </div>
 
-        <div class="delay-400 animate-fade-up mt-11 flex flex-wrap items-center gap-4">
+        <div class="delay-400 animate-fade-up mt-9 flex flex-wrap items-center gap-3 sm:mt-11 sm:gap-4">
           <button class="btn-primary" @click="scrollTo('#contacts')">
             Записаться в пансионат
             <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -122,7 +122,7 @@ function scrollTo(id: string) {
       </div>
     </div>
 
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+    <div class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex">
       <span class="font-body text-[10px] uppercase tracking-[0.2em] text-white/40">Листайте</span>
       <button class="animate-scroll flex flex-col items-center" aria-label="Прокрутить вниз" @click="scrollTo('#about')">
         <div class="h-8 w-5 rounded-full border border-white/25 flex items-start justify-center pt-1.5">

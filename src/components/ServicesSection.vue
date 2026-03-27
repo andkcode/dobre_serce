@@ -70,15 +70,13 @@ const services: ServiceItem[] = [
 </script>
 
 <template>
-  <section id="services" class="relative overflow-hidden py-28 lg:py-36" style="background: var(--color-ivory-100)">
-    <div class="dot-grid pointer-events-none absolute inset-0 opacity-40" />
-
+  <section id="services" class="relative overflow-hidden py-20 lg:py-32" style="background: var(--color-ivory-100)">
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mb-16 text-center" data-animate>
         <div class="eyebrow mb-5 justify-center">Наши услуги</div>
-        <h2 class=" mb-5" style="font-size: clamp(1.7rem, 4vw, 2.3rem);">
+        <h2 class="section-title mb-5">
           Комплексный уход<br />
-          <em class="font-display font-400 italic" style="color: var(--color-brand-500); font-size: clamp(1.7rem, 4vw, 2.3rem);">за вашими близкими</em>
+          <em class="font-display font-400 italic" style="color: var(--color-brand-500); font-size: clamp(1.6rem, 4vw, 2.3rem);">за вашими близкими</em>
         </h2>
         <p class="section-subtitle mx-auto max-w-2xl font-medium">
           Наш пансионат обеспечивает благоприятные условия для проживания пожилых людей и ведения
@@ -114,30 +112,74 @@ const services: ServiceItem[] = [
 
       <!-- CTA strip: sapphire-800 → sapphire-700 blended with brand gold shine -->
       <div
-        class="mt-16 flex flex-col items-center gap-6 rounded-3xl p-10 text-center"
-        style="background: linear-gradient(135deg, var(--color-sapphire-800) 0%, var(--color-sapphire-700) 60%, var(--color-sapphire-800) 100%);"
+        class="group relative mt-16 overflow-hidden rounded-3xl border border-ivory-200 p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_44px_rgba(0,36,85,0.18)] sm:p-10"
+        style="background: linear-gradient(160deg, rgba(255,255,255,0.98) 0%, var(--color-sapphire-50) 62%, rgba(255,255,255,0.95) 100%);"
         data-animate
       >
-        <img src="../assets/logo.png" alt="Логотип Доброе сердце" class="h-14 w-14 bg-white rounded-full p-2 flex items-center justify-center" />
-        <div>
-          <h3 class="font-display font-700 text-2xl text-white md:text-3xl">Есть вопросы об услугах?</h3>
-          <p class="font-body font-300 mt-2 text-sm text-white/65">
-            Позвоните или оставьте заявку — наш консультант ответит на все ваши вопросы
-          </p>
+        <!-- декоративные световые пятна -->
+        <div
+          class="pointer-events-none absolute -right-20 -top-16 h-48 w-48 rounded-full blur-2xl"
+          style="background: radial-gradient(circle, rgba(0,99,181,0.2) 0%, rgba(0,99,181,0) 70%);"
+        />
+        <div
+          class="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full blur-2xl"
+          style="background: radial-gradient(circle, rgba(249,189,21,0.18) 0%, rgba(249,189,21,0) 72%);"
+        />
+        <img
+          src="../assets/logo.png"
+          alt=""
+          class="pointer-events-none absolute right-6 top-6 h-16 w-16 opacity-[0.09] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105"
+        />
+
+        <div class="relative z-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
+          <!-- левая часть: иконка + текст -->
+          <div class="flex flex-1 flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
+            <div
+              class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border"
+              style="background: linear-gradient(145deg, var(--color-sapphire-700), var(--color-sapphire-800)); border-color: rgba(255,255,255,0.3);"
+            >
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="mb-1 flex flex-wrap items-center gap-2">
+                <h3 class="font-display text-xl font-600 text-ink-900">Есть вопросы об услугах?</h3>
+                <span
+                  class="inline-flex items-center rounded-full px-3 py-1 font-body text-[11px] font-500 uppercase tracking-[0.12em]"
+                  style="background: var(--color-brand-100); color: var(--color-gold-600);"
+                >
+                  Бесплатно
+                </span>
+              </div>
+              <p class="font-body text-sm leading-relaxed font-400 text-ink-700/90">
+                Позвоните или оставьте заявку — наш консультант ответит на все ваши вопросы.
+              </p>
+            </div>
+          </div>
+
+          <!-- правая часть: CTA-кнопки -->
+          <div class="flex flex-wrap gap-3 sm:flex-col sm:items-stretch">
+            <a href="tel:+380961462910" class="btn-primary sm:whitespace-nowrap">
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              Позвонить
+            </a>
+            <button
+              class="btn-outline sm:whitespace-nowrap"
+              @click="$el.ownerDocument.querySelector('#contacts')?.scrollIntoView({ behavior: 'smooth' })"
+            >
+              Оставить заявку
+            </button>
+          </div>
         </div>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="tel:+380961462910" class="btn-ghost bg-[#E6A701] hover:bg-blue-600">
-            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-            Позвонить
-          </a>
-          <button
-            class="font-body font-600 text-sapphire-700 hover:bg-ivory-50 rounded-full bg-white px-6 py-2.5 text-xs tracking-wider uppercase transition-all hover:-translate-y-0.5"
-            @click="$el.ownerDocument.querySelector('#contacts')?.scrollIntoView({ behavior: 'smooth' })"
-          >
-            Оставить заявку
-          </button>
+
+        <!-- чипы внизу -->
+        <div class="relative z-10 mt-5 flex flex-wrap gap-2">
+          <span class="rounded-full border px-3 py-1 text-xs font-500" style="border-color: var(--color-sapphire-200); background: var(--color-sapphire-100); color: var(--color-sapphire-800);">Круглосуточная поддержка</span>
+          <span class="rounded-full border px-3 py-1 text-xs font-500" style="border-color: var(--color-sapphire-200); background: var(--color-sapphire-100); color: var(--color-sapphire-800);">Индивидуальный подбор</span>
+          <span class="rounded-full border px-3 py-1 text-xs font-500" style="border-color: var(--color-brand-200); background: var(--color-brand-50); color: var(--color-gold-600);">Без навязывания</span>
         </div>
       </div>
     </div>

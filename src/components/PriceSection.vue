@@ -39,9 +39,7 @@ const steps = [
 </script>
 
 <template>
-  <section id="price" class="relative overflow-hidden bg-ivory-50 py-16 lg:py-36">
-    <div class="pointer-events-none absolute inset-0 opacity-[0.35]"
-      style="background-image: radial-gradient(circle, var(--color-ink-200) 1px, transparent 1px); background-size: 36px 36px;" />
+  <section id="price" class="relative overflow-hidden bg-ivory-50 py-20 lg:py-32">
 
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
       <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-24">
@@ -63,12 +61,12 @@ const steps = [
             <img src="../assets/logo.png" alt="" class="pointer-events-none absolute right-8 top-8 h-20 w-20 opacity-[0.09] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105" />
 
             <div class="relative z-10 h-full">
-              <div class="mb-4 flex items-center justify-between gap-4">
-                <div class="font-body text-xs font-600 uppercase tracking-[0.2em] text-ink-500">
+              <div class="mb-4 flex flex-wrap items-center gap-2">
+                <div class="flex-1 font-body text-xs font-600 uppercase tracking-[0.2em] text-ink-500">
                   Стоимость проживания
                 </div>
                 <span
-                  class="inline-flex shrink-0 items-center rounded-full px-3 py-1 font-body text-[11px] font-500 uppercase tracking-[0.12em]"
+                  class="inline-flex items-center rounded-full px-3 py-1 font-body text-[11px] font-500 uppercase tracking-[0.12em]"
                   style="background: var(--color-brand-100); color: var(--color-gold-600);"
                 >
                   Индивидуальный расчёт
@@ -80,7 +78,7 @@ const steps = [
               </div>
               <div class="mb-7 h-0.5 w-20" style="background: linear-gradient(90deg, var(--color-sapphire-700), transparent);" />
 
-              <p class="mb-8 max-w-[42ch] font-body text-sm leading-relaxed font-400 text-ink-700/95">
+              <p class="mb-8 font-body text-sm leading-relaxed font-400 text-ink-700/95">
                 Стоимость проживания в пансионате «Доброе сердце» рассчитывается персонально для каждого
                 проживающего с учётом состояния здоровья, формата размещения и объёма необходимого ухода.
               </p>
@@ -109,7 +107,7 @@ const steps = [
 
         <div data-animate class="delay-200 mt-8 lg:mt-0">
           <div class="eyebrow mb-5">Цена</div>
-          <h2 class="mb-6" style="font-size: min(7vw, 3.4rem);">
+          <h2 class="section-title mb-6" style="font-size: min(7vw, 3.4rem);">
             Прозрачное ценообразование<br />
             <em class="font-display italic font-400" style="color: var(--color-brand-500);">для каждой семьи</em>
           </h2>

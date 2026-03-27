@@ -8,31 +8,10 @@
     • sage success state → unchanged (semantic green correct)
     • check icon #4e8060 → color sage-600 CSS var
 -->
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const formData = ref({
-  name: '',
-  phone: '',
-  message: '',
-})
-
-const isSubmitted = ref(false)
-const isSubmitting = ref(false)
-
-async function handleSubmit() {
-  isSubmitting.value = true
-  await new Promise((resolve) => setTimeout(resolve, 1200))
-  isSubmitting.value = false
-  isSubmitted.value = true
-  formData.value = { name: '', phone: '', message: '' }
-}
-</script>
-
 <template>
-  <section id="contacts" class="relative overflow-hidden py-28 lg:py-36" style="background: var(--color-ivory-100);">
+  <section id="contacts" class="relative overflow-hidden py-20 lg:py-32" style="background: var(--color-ivory-100);">
     <div
-      class="pointer-events-none absolute left-0 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40"
+      class="pointer-events-none absolute left-0 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 sm:h-[700px] sm:w-[700px]"
       style="background: radial-gradient(circle, var(--color-brand-50) 0%, transparent 70%);"
     />
 
@@ -116,9 +95,7 @@ async function handleSubmit() {
               <div>
                 <div class="font-body text-xs font-600 uppercase tracking-wider text-ink-400">Телефон</div>
                 <!-- phone number: brand-500 gold -->
-                <div
-                  
-                >
+                <div class="mt-0.5 font-body text-base font-600 text-sapphire-700">
                   +38 096 146 29 10
                 </div>
                 <div class="font-body text-xs text-ink-400">Круглосуточно, без выходных</div>

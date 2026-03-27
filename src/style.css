@@ -191,12 +191,12 @@
   }
 
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--color-ivory-100); }
+  ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--color-brand-400), var(--color-sapphire-600));
+    background: rgba(0, 0, 0, 0.18);
     border-radius: 3px;
   }
-  ::-webkit-scrollbar-thumb:hover { background: var(--color-brand-500); }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.32); }
 }
 
 /* ============================================================
@@ -362,18 +362,19 @@
    */
   .section-title {
     font-family: var(--font-family-display);
-    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-size: clamp(1.95rem, 5.2vw, 3.4rem);
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.12;
     color: var(--color-sapphire-800);
     letter-spacing: -0.01em;
+    text-wrap: balance;
   }
   .section-subtitle {
     font-family: var(--font-family-body);
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    line-height: 1.65;
     color: var(--color-ink-500);
-    font-weight: 300;
+    font-weight: 400;
   }
 
   /*
@@ -527,6 +528,23 @@
       var(--color-ivory-400) 70%,
       transparent 100%
     );
+  }
+}
+
+@media (max-width: 640px) {
+  .eyebrow {
+    gap: 0.55rem;
+    letter-spacing: 0.18em;
+  }
+  .eyebrow::before,
+  .eyebrow::after {
+    width: 1.4rem;
+  }
+  .btn-primary,
+  .btn-ghost,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
   }
 }
 

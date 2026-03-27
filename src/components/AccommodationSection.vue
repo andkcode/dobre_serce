@@ -77,15 +77,15 @@ const notAccepted = [
 </script>
 
 <template>
-  <section id="accommodation" class="bg-ivory-50 py-16 lg:py-28 overflow-hidden">
+  <section id="accommodation" class="bg-ivory-50 py-20 lg:py-32 overflow-hidden">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
       <div class="mb-16 text-center" data-animate>
         <div class="eyebrow mb-5 justify-center">Варианты проживания</div>
-        <h2 class="s mb-5" style="font-size: clamp(1.7rem, 4vw, 2.3rem);">
+        <h2 class="section-title mb-5">
           Выберите удобный<br />
           <!-- gold italic accent -->
-          <em class="font-display italic font-400" style="color: var(--color-brand-500); font-size: clamp(1.7rem, 4vw, 2.3rem);">формат проживания</em>
+          <em class="font-display italic font-400" style="color: var(--color-brand-500); font-size: clamp(1.6rem, 4vw, 2.3rem);">формат проживания</em>
         </h2>
       </div>
 
@@ -93,7 +93,7 @@ const notAccepted = [
         <div
           v-for="(option, i) in options"
           :key="option.title"
-          class="group relative overflow-hidden rounded-3xl border border-ivory-200 bg-white p-8 shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-lift"
+          class="group relative overflow-hidden rounded-3xl border border-ivory-200 bg-white p-6 shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-lift sm:p-8"
           :class="`animation-delay-${i * 100}`"
           data-animate
         >

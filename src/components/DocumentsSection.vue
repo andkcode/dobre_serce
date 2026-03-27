@@ -17,9 +17,9 @@ const documents = [
 </script>
 
 <template>
-  <section id="documents" class="relative overflow-hidden py-28 lg:py-36" style="background: var(--color-ivory-100);">
+  <section id="documents" class="relative overflow-hidden py-20 lg:py-32" style="background: var(--color-ivory-100);">
     <div
-      class="pointer-events-none absolute right-0 top-1/2 h-[600px] w-[600px] -translate-y-1/2 translate-x-1/2 rounded-full opacity-50"
+      class="pointer-events-none absolute right-0 top-1/2 h-[360px] w-[360px] -translate-y-1/2 translate-x-1/2 rounded-full opacity-50 sm:h-[600px] sm:w-[600px]"
       style="background: radial-gradient(circle, var(--color-brand-50) 0%, transparent 70%);"
     />
     <div class="absolute left-0 right-0 top-0 h-px" style="background: linear-gradient(90deg, transparent, var(--color-ivory-300), transparent);" />
@@ -29,7 +29,7 @@ const documents = [
 
         <div data-animate>
           <div class="eyebrow mb-5">Документы</div>
-          <h2 class="text-black text-4xl mb-6">
+          <h2 class="section-title mb-6">
             Необходимые<br />
             <em class="font-display italic font-400" style="color: var(--color-brand-500); font-size: clamp(1.7rem, 4vw, 2.3rem);">документы для поступления</em>
           </h2>
@@ -54,18 +54,18 @@ const documents = [
               class="pointer-events-none absolute right-5 top-5 h-16 w-16 opacity-[0.09] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105"
             />
 
-            <div class="mb-4 flex items-start justify-between gap-4">
+            <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
               <div class="flex items-center gap-3">
                 <div
-                  class="flex h-11 w-11 items-center justify-center rounded-xl border"
+                  class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border"
                   style="background: linear-gradient(145deg, var(--color-sapphire-700), var(--color-sapphire-800)); border-color: rgba(255, 255, 255, 0.35);"
                 >
                   <Icon icon="streamline:ambulance" class="h-6 w-6 text-white" />
                 </div>
-                <h3 class="font-display text-[1.3rem] leading-tight font-600 text-ink-900">Индивидуальный трансфер</h3>
+                <h3 class="font-display text-[1.15rem] leading-tight font-600 text-ink-900 sm:text-[1.3rem]">Индивидуальный трансфер</h3>
               </div>
               <span
-                class="inline-flex shrink-0 items-center rounded-full px-3 py-1 font-body text-[11px] font-500 uppercase tracking-[0.12em]"
+                class="self-start inline-flex items-center rounded-full px-3 py-1 font-body text-[11px] font-500 uppercase tracking-[0.12em]"
                 style="background: var(--color-brand-100); color: var(--color-gold-600);"
               >
                 24/7 поддержка
@@ -103,7 +103,7 @@ const documents = [
 
             <ol class="space-y-4">
               <li
-                v-for="(doc, index) in documents"
+                v-for="doc in documents"
                 :key="doc"
                 class="group flex items-start gap-4 transition-colors duration-200 hover:bg-sapphire-50 -mx-3 px-3 py-2 rounded-xl"
               >
@@ -122,7 +122,7 @@ const documents = [
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
               </svg>
-              Уточнить перечень документов
+              Уточнить
             </a>
           </div>
         </div>
