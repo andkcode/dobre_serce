@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeMount } from "vue"
+import { ref, onMounted, onUnmounted } from "vue"
 import Loader from "@/components/Loader.vue"
 import AppHeader from '@/components/AppHeader.vue'
 import HeroSection from '@/components/HeroSection.vue'
@@ -14,22 +14,14 @@ import AppFooter from '@/components/AppFooter.vue'
 import { useScrollAnimation } from '@/composables/useScroll'
 import { useLocale } from '@/composables/useLocale'
 
-onBeforeMount(() => {
-  const originalSetAttribute = Element.prototype.setAttribute
-  Element.prototype.setAttribute = function (name, value) {
-    try {
-      return originalSetAttribute.call(this, name, value)
-    } catch (e) {
-      console.error('Bad attribute:', name, JSON.stringify(value))
-      throw e
-    }
-  }
-})
-
 const { observeElements } = useScrollAnimation()
 const { lang } = useLocale()
 const loading = ref(true)
 const showBackTop = ref(false)
+
+const onScroll = () => {
+  showBackTop.value = window.scrollY > 400
+}
 
 // FIX 1: scrollToTop was called in the template but never defined
 function scrollToTop() {
@@ -39,9 +31,8 @@ function scrollToTop() {
 onMounted(() => {
   observeElements('[data-animate]')
 
-  window.addEventListener('scroll', () => {
-    showBackTop.value = window.scrollY > 400
-  }, { passive: true })
+  window.addEventListener('scroll', onScroll, { passive: true })
+  onScroll()
 
   // FIX 2: if the page already loaded before onMounted fires (common in Vite/HMR),
   // document.readyState will already be 'complete' and the 'load' event never fires —
@@ -54,6 +45,10 @@ onMounted(() => {
   } else {
     window.addEventListener('load', hide, { once: true })
   }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
 })
 </script>
 

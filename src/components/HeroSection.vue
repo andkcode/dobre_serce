@@ -116,7 +116,9 @@ const stats = computed(() => [
         <h1 class="delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-center lg:text-left w-full"
           style="font-size: clamp(1.95rem, 8.2vw, 5.5rem); font-weight: 400; line-height: 1.05;"
         >
-          {{ ui.titleLine1 }}
+            Комфорт и забота<br />
+            <span style="color: var(--color-brand-500);">для ваших близких</span>
+        
         </h1>
 
         <!-- decorative line: brand-500 → transparent (was #DAA532 → transparent) -->

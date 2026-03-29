@@ -252,11 +252,11 @@ function scrollToSection(href: string) {
   position: absolute;
   inset: 0;
   background: rgba(253, 252, 248, var(--s));
-  backdrop-filter: blur(calc(var(--s) * 22px));
-  -webkit-backdrop-filter: blur(calc(var(--s) * 22px));
+  backdrop-filter: blur(calc(var(--s) * 12px));
+  -webkit-backdrop-filter: blur(calc(var(--s) * 12px));
   box-shadow:
     0 1px 0 rgba(15,13,11, calc(var(--s) * 0.08)),
-    0 4px 48px rgba(15,13,11, calc(var(--s) * 0.06));
+    0 4px 24px rgba(15,13,11, calc(var(--s) * 0.05));
   transition:
     background var(--dur) var(--ease),
     backdrop-filter var(--dur) var(--ease),
@@ -356,8 +356,8 @@ function scrollToSection(href: string) {
   box-shadow:
     inset 0 0 0 9999px rgba(0, 99, 181, var(--s)),
     0 4px 20px rgba(0, 99, 181, calc(var(--s) * 0.22));
-  backdrop-filter: blur(calc((1 - var(--s)) * 14px));
-  -webkit-backdrop-filter: blur(calc((1 - var(--s)) * 14px));
+  backdrop-filter: blur(calc((1 - var(--s)) * 8px));
+  -webkit-backdrop-filter: blur(calc((1 - var(--s)) * 8px));
   transition:
     background  var(--dur) var(--ease),
     border-color var(--dur) var(--ease),
@@ -447,8 +447,8 @@ function scrollToSection(href: string) {
   z-index: 2;
   padding: 0 1.5rem 1.25rem;
   background: rgba(253,252,248,0.97);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 8px 40px rgba(15,13,11,0.09);
 }
 @media (min-width: 1024px) { .ds-drawer { display: none; } }
@@ -560,4 +560,15 @@ function scrollToSection(href: string) {
 .ds-drawer-leave-to  { opacity: 0; transform: translateY(-8px); }
 .ds-drawer-enter-to,
 .ds-drawer-leave-from{ opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-header,
+  .ds-header *,
+  .ds-drawer__item,
+  .ds-drawer-enter-active,
+  .ds-drawer-leave-active {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 </style>
