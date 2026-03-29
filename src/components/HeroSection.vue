@@ -23,7 +23,8 @@ const ui = computed(() => {
   if (lang.value === 'kk') {
     return {
       aria: 'Басты баннер',
-      titleLine1: 'Жақындарыңызға жайлылық пен қамқорлық',
+      titleBlue: 'Жайлылық пен қамқорлық',
+      titleGold: 'жақындарыңыз үшін',
       subtitle:
         'Біздің пансионат - әрбір тұрғын өзін үйдегідей сезінетін орын: жылы атмосфера, білікті мамандар және белсенді өмір.',
       statLabel: 'Тәулік бойы күтім',
@@ -37,7 +38,8 @@ const ui = computed(() => {
 
   return {
     aria: 'Главный баннер',
-    titleLine1: 'Комфорт и забота для ваших близких',
+    titleBlue: 'Комфорт и забота',
+    titleGold: 'для ваших близких',
     subtitle:
       'Наш пансионат — место, где каждый проживающий чувствует себя дома: тёплая атмосфера, специалисты рядом и полноценная активная жизнь под заботливым присмотром.',
     statLabel: 'Круглосуточный уход',
@@ -162,9 +164,8 @@ onUnmounted(() => {
         <h1 class="delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-center lg:text-left w-full"
           style="font-size: clamp(1.95rem, 8.2vw, 5.5rem); font-weight: 400; line-height: 1.05;"
         >
-            Комфорт и забота<br />
-            <span style="color: var(--color-brand-500);">для ваших близких</span>
-        
+          {{ ui.titleBlue }}<br />
+          <span style="color: var(--color-brand-500);">{{ ui.titleGold }}</span>
         </h1>
 
         <!-- decorative line: brand-500 → transparent (was #DAA532 → transparent) -->
