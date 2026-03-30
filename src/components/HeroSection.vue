@@ -61,7 +61,7 @@ onUnmounted(() => {
 <template>
 
   <section
-    class="relative flex min-h-screen items-center overflow-hidden"
+    class="min-stable-screen relative flex items-center overflow-hidden"
     :aria-label="t('hero.aria')"
   >
     <!-- ── Layered background ── -->

@@ -172,7 +172,10 @@
     --header-h: 80px;
   }
 
-  html { overflow-x: hidden; }
+  html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
 
   body {
     font-family: var(--font-family-body);
@@ -197,6 +200,22 @@
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.32); }
+}
+
+.min-stable-screen {
+  min-height: 100vh;
+}
+
+@supports (min-height: 100svh) {
+  .min-stable-screen {
+    min-height: 100svh;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .min-stable-screen {
+    min-height: -webkit-fill-available;
+  }
 }
 
 /* ============================================================

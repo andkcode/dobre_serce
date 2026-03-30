@@ -62,7 +62,7 @@ onUnmounted(() => {
     <Loader v-if="loading" />
   </Transition>
 
-  <div v-show="!loading" class="min-h-screen">
+  <div v-show="!loading" class="min-stable-screen">
     <AppHeader />
     <main>
       <HeroSection />
