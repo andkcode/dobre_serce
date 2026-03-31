@@ -15,12 +15,6 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const loading = ref(true)
-const showBackTop = ref(false)
-
-// FIX 1: scrollToTop was called in the template but never defined
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
 
 onMounted(() => {
 
