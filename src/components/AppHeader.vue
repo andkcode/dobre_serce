@@ -20,10 +20,14 @@ const activeItem = ref<string | null>(null)
 
 const navItems = computed(() => tm('header.nav') as { label: string; href: string }[])
 
+function prefersInstantScroll() {
+  return window.matchMedia('(prefers-reduced-motion: reduce), (hover: none) and (pointer: coarse)').matches
+}
+
 function scrollToSection(href: string) {
   activeItem.value = href
   isMobileMenuOpen.value = false
-  document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+  document.querySelector(href)?.scrollIntoView({ behavior: prefersInstantScroll() ? 'auto' : 'smooth' })
 }
 </script>
 

@@ -890,6 +890,10 @@ rgba(0,   0,   0,   0.20) 100%
 
 /* Touch-only devices: hover effects never fire, transitions only waste GPU */
 @media (hover: none) and (pointer: coarse) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
   *,
   *::before,
   *::after {

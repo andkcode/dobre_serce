@@ -19,8 +19,12 @@ const useVideo = ref(true)
 const heroVideoRef = ref<HTMLVideoElement | null>(null)
 let onVisibilityChange: (() => void) | null = null
 
+function prefersInstantScroll() {
+  return window.matchMedia('(prefers-reduced-motion: reduce), (hover: none) and (pointer: coarse)').matches
+}
+
 function scrollTo(id: string) {
-  document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
+  document.querySelector(id)?.scrollIntoView({ behavior: prefersInstantScroll() ? 'auto' : 'smooth' })
 }
 
 const stats = computed(() => [
@@ -32,10 +36,12 @@ const stats = computed(() => [
 
 onMounted(() => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+  const isSmallViewport = window.matchMedia('(max-width: 1024px)').matches
   const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true
 
   // Disable heavy hero video on constrained devices to reduce jank and bandwidth.
-  useVideo.value = !(prefersReducedMotion || saveData)
+  useVideo.value = !(prefersReducedMotion || saveData || isTouchDevice || isSmallViewport)
 
   onVisibilityChange = () => {
     const video = heroVideoRef.value

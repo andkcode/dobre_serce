@@ -21,9 +21,13 @@ const onScroll = () => {
   showBackTop.value = window.scrollY > 400
 }
 
+function prefersInstantScroll() {
+  return window.matchMedia('(prefers-reduced-motion: reduce), (hover: none) and (pointer: coarse)').matches
+}
+
 // FIX 1: scrollToTop was called in the template but never defined
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo({ top: 0, behavior: prefersInstantScroll() ? 'auto' : 'smooth' })
 }
 
 onMounted(() => {
