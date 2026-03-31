@@ -39,6 +39,7 @@ const { t } = useI18n()
         <div data-animate>
           <div class="mb-8 overflow-hidden rounded-3xl shadow-lift ring-1 ring-ink-100">
             <iframe
+              class="contact-map-frame"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.541181548874!2d71.42291657698297!3d51.172247635131455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424580d55804208f%3A0x8eeb11fd4356cb6!2z0L_RgNC-0YHQvy4g0KDQtdGB0L_Rg9Cx0LvQuNC60LgsIDAyMDAwMCDQkNGB0YLQsNC90LAsINCa0LDQt9Cw0YXRgdGC0LDQvQ!5e0!3m2!1sru!2spl!4v1773859914767!5m2!1sru!2spl"
               width="100%"
               height="260"
@@ -133,3 +134,11 @@ const { t } = useI18n()
       </div>
   </section>
 </template>
+
+<style scoped>
+@media (hover: none) and (pointer: coarse) {
+  .contact-map-frame {
+    pointer-events: none;
+  }
+}
+</style>

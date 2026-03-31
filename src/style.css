@@ -210,12 +210,6 @@
   }
 }
 
-@supports (-webkit-touch-callout: none) {
-  .min-stable-screen {
-    min-height: -webkit-fill-available;
-  }
-}
-
 /* ============================================================
    COMPONENTS
    ============================================================ */
