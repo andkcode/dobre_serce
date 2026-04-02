@@ -170,13 +170,37 @@
   :root {
     /* scroll-behavior: smooth; */
     --header-h: 80px;
-    --app-stable-vh: 1vh;
+  }
+
+  * {
+  -webkit-transform: translateZ(0);
+}
+
+  html, body {
+    -webkit-overflow-scrolling: touch;
   }
 
   html {
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+  }
+
+  .animate-float,
+  .animate-drift,
+  .animate-slide-in,
+  .animate-scale-in {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+  @supports (-webkit-touch-callout: none) {
+    .animate-float,
+    .animate-drift,
+    .animate-slide-in,
+    .animate-scale-in {
+      animation: none !important;
+    }
   }
 
   body {
@@ -204,7 +228,8 @@
 }
 
 .min-stable-screen {
-  min-height: calc(var(--app-stable-vh) * 100);
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 @supports (min-height: 100svh) {
