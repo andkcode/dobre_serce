@@ -64,36 +64,30 @@ function scrollToSection(href: string) {
 </script>
 
 <template>
-  <header
-    class="ds-header"
-    :class="{ 'ds-header--scrolled': isScrolled }"
-    role="banner"
-  >
-
+  <header class="ds-header" :class="{ 'ds-header--scrolled': isScrolled }" role="banner">
     <div class="ds-header__bg" aria-hidden="true" />
 
     <nav class="ds-header__nav" :aria-label="ui.navAria">
-
-      <div class="ds-logo__img-wrap" style="position: relative; display: inline-block;">
-        <div style="
-          position: absolute;
-          top: -5px;
-          left: 38%;
-          transform: translateX(-50%);
-          font-family: var(--font-family-body, system-ui, sans-serif);
-          font-size: 0.70rem;
-          font-weight: 700;
-          letter-spacing: 0.18em;
-          text-transform: uppercase;
-          color: var(--color-brand-500);
-          white-space: nowrap;
-          pointer-events: none;
-        ">Астана</div>
-        <img
-          src="../assets/dobroe_serdce.png"
-          alt="Логотип Доброе сердце"
-          class="ds-logo__img"
-        />
+      <div class="ds-logo__img-wrap" style="position: relative; display: inline-block">
+        <div
+          style="
+            position: absolute;
+            top: -5.5px;
+            left: 41%;
+            transform: translateX(-50%);
+            font-family: var(--font-family-body, system-ui, sans-serif);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-brand-500);
+            white-space: nowrap;
+            pointer-events: none;
+          "
+        >
+          Астана
+        </div>
+        <img src="../assets/dobroe_serdce.png" alt="Логотип Доброе сердце" class="ds-logo__img" />
       </div>
 
       <ul class="ds-nav__list" role="list">
@@ -110,15 +104,18 @@ function scrollToSection(href: string) {
       </ul>
 
       <div class="flex gap-6">
-        <div class="hidden lg:flex items-center gap-4">
+        <div class="hidden items-center gap-4 lg:flex">
           <a
             href="https://instagram.com/pansionat_dobroe_serdce"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            class="group relative flex items-center justify-center rounded-full backdrop-blur-sm  transition-all duration-300 hover:-translate-y-1 hover:scale-110"
+            class="group relative flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-110"
           >
-            <Icon icon="skill-icons:instagram" class="relative z-10 w-[30px] h-[30px] text-white/70 group-hover:text-white transition-all duration-300 group-hover:scale-110" />
+            <Icon
+              icon="skill-icons:instagram"
+              class="relative z-10 h-[30px] w-[30px] text-white/70 transition-all duration-300 group-hover:scale-110 group-hover:text-white"
+            />
           </a>
           <a
             href="https://wa.me/380961462910"
@@ -127,21 +124,34 @@ function scrollToSection(href: string) {
             aria-label="WhatsApp"
             class="group relative flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-110"
           >
-            <Icon icon="logos:whatsapp-icon" class="relative z-10 w-[30px] h-[30px] text-white/70 group-hover:text-white transition-all duration-300 group-hover:scale-110" />
+            <Icon
+              icon="logos:whatsapp-icon"
+              class="relative z-10 h-[30px] w-[30px] text-white/70 transition-all duration-300 group-hover:scale-110 group-hover:text-white"
+            />
           </a>
         </div>
 
-        <div class="hidden items-center gap-1 rounded-full border border-white/20 bg-white/10 p-1 backdrop-blur-sm md:flex">
+        <div
+          class="border-sapphire-700 bg-sapphire-700 hidden items-center gap-0 rounded-full border p-0.5 md:flex"
+        >
           <button
-            class="rounded-full px-3 py-1 font-body text-xs font-600 tracking-wider transition-colors"
-            :class="lang === 'ru' ? 'bg-white text-sapphire-700' : 'text-white/70 hover:text-white'"
+            class="font-body font-600 px-3 py-1 text-xs tracking-wider transition-colors"
+            :class="
+              lang === 'ru'
+                ? 'bg-yellow-500 rounded-full text-white'
+                : 'text-white rounded-full'
+            "
             @click="setLang('ru')"
           >
             RU
           </button>
           <button
-            class="rounded-full px-3 py-1 font-body text-xs font-600 tracking-wider transition-colors"
-            :class="lang === 'kk' ? 'bg-white text-sapphire-700' : 'text-white/70 hover:text-white'"
+            class="font-body font-600 px-3 py-1 text-xs rounded-full tracking-wider transition-colors"
+            :class="
+              lang === 'kk'
+                ? 'bg-yellow-500 text-white'
+                : 'text-white rounded-full '
+            "
             @click="setLang('kk')"
           >
             KZ
@@ -151,7 +161,9 @@ function scrollToSection(href: string) {
         <a href="tel:+380961462910" class="ds-cta" :aria-label="ui.callAria">
           <span class="ds-cta__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+              />
             </svg>
           </span>
           <span class="ds-cta__label">+38 096 146 29 10</span>
@@ -196,42 +208,63 @@ function scrollToSection(href: string) {
         </ul>
         <a href="tel:+380961462910" class="ds-drawer__cta">
           <svg class="ds-drawer__cta-icon" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            <path
+              d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+            />
           </svg>
           {{ ui.callButton }}
         </a>
-          <div class="mt-3 flex justify-center gap-2">
-            <button
-              class="rounded-full border px-4 py-1.5 font-body text-xs font-600 tracking-wider"
-              :class="lang === 'ru' ? 'border-sapphire-700 bg-sapphire-700 text-white' : 'border-ink-200 text-ink-600'"
-              @click="setLang('ru')"
-            >
-              RU
-            </button>
-            <button
-              class="rounded-full border px-4 py-1.5 font-body text-xs font-600 tracking-wider"
-              :class="lang === 'kk' ? 'border-sapphire-700 bg-sapphire-700 text-white' : 'border-ink-200 text-ink-600'"
-              @click="setLang('kk')"
-            >
-              KZ
-            </button>
-          </div>
-          <div class="flex justify-center items-center gap-6 pt-4">
-            <a
-              href="https://instagram.com/pansionat_dobroe_serdce"
-              target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-              class="group relative flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-110"
-            >
-              <Icon icon="skill-icons:instagram" class="relative z-10 w-[30px] h-[30px] transition-all duration-300 group-hover:scale-110" />
-            </a>
-            <a
-              href="https://wa.me/380961462910"
-              target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-              class="group relative flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-110"
-            >
-              <Icon icon="logos:whatsapp-icon" class="relative z-10 w-[30px] h-[30px] transition-all duration-300 group-hover:scale-110" />
-            </a>
-          </div>
+        <div class="flex justify-center gap-2 pt-3">
+          <button
+            class="font-body font-600 rounded-full border px-4 py-1.5 text-xs tracking-wider transition-colors"
+            :class="
+              lang === 'ru'
+                ? 'border-sapphire-700 bg-sapphire-700 text-white'
+                : 'border-sapphire-700 text-sapphire-700 bg-white'
+            "
+            @click="setLang('ru')"
+          >
+            RU
+          </button>
+
+          <button
+            class="font-body font-600 rounded-full border px-4 py-1.5 text-xs tracking-wider transition-colors"
+            :class="
+              lang === 'kk'
+                ? 'border-sapphire-700 bg-sapphire-700 text-white'
+                : 'border-sapphire-700 text-sapphire-700 bg-white'
+            "
+            @click="setLang('kk')"
+          >
+            KZ
+          </button>
+        </div>
+        <div class="flex items-center justify-center gap-6 pt-4">
+          <a
+            href="https://instagram.com/pansionat_dobroe_serdce"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="group relative flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-110"
+          >
+            <Icon
+              icon="skill-icons:instagram"
+              class="relative z-10 h-[30px] w-[30px] transition-all duration-300 group-hover:scale-110"
+            />
+          </a>
+          <a
+            href="https://wa.me/380961462910"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            class="group relative flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-110"
+          >
+            <Icon
+              icon="logos:whatsapp-icon"
+              class="relative z-10 h-[30px] w-[30px] transition-all duration-300 group-hover:scale-110"
+            />
+          </a>
+        </div>
       </div>
     </Transition>
   </header>
@@ -247,9 +280,9 @@ function scrollToSection(href: string) {
   inset: 0 0 auto;
   z-index: 50;
 }
-.ds-header--scrolled { 
+.ds-header--scrolled {
   --s: 1;
- }
+}
 
 .ds-header__bg {
   position: absolute;
@@ -258,8 +291,8 @@ function scrollToSection(href: string) {
   backdrop-filter: blur(calc(var(--s) * 22px));
   -webkit-backdrop-filter: blur(calc(var(--s) * 22px));
   box-shadow:
-    0 1px 0 rgba(15,13,11, calc(var(--s) * 0.08)),
-    0 4px 48px rgba(15,13,11, calc(var(--s) * 0.06));
+    0 1px 0 rgba(15, 13, 11, calc(var(--s) * 0.08)),
+    0 4px 48px rgba(15, 13, 11, calc(var(--s) * 0.06));
   transition:
     background var(--dur) var(--ease),
     backdrop-filter var(--dur) var(--ease),
@@ -277,8 +310,6 @@ function scrollToSection(href: string) {
     0 12px 40px rgba(15, 13, 11, 0.08);
 }
 
-
-
 .ds-header__nav {
   position: relative;
   z-index: 2;
@@ -291,20 +322,35 @@ function scrollToSection(href: string) {
   transition: padding var(--dur) var(--ease);
 }
 @media (min-width: 1024px) {
-  .ds-header__nav { padding-left: 2rem; padding-right: 2rem; }
+  .ds-header__nav {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
-.ds-logo__img-wrap { position: relative; flex-shrink: 0; }
-.ds-logo__img { height: 34px; width: auto; object-fit: contain; }
+.ds-logo__img-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+.ds-logo__img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
 
 .ds-nav__list {
   display: none;
   align-items: center;
   gap: 1.75rem;
   list-style: none;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
 }
-@media (min-width: 1024px) { .ds-nav__list { display: flex; } }
+@media (min-width: 1024px) {
+  .ds-nav__list {
+    display: flex;
+  }
+}
 
 .ds-nav__link {
   position: relative;
@@ -317,28 +363,36 @@ function scrollToSection(href: string) {
   background: transparent;
   cursor: pointer;
   padding: 0.3rem 0;
-  color: var(--color-brand-500);
+  color: var(--color-blue-500);
   transition: color var(--dur) var(--ease);
   outline: none;
 }
-.ds-header--scrolled .ds-nav__link { color: var(--color-ink-800); }
+.ds-header--scrolled .ds-nav__link {
+  color: var(--color-ink-800);
+}
 /* hover/active: brand-500 gold (was teal #00c4b4) */
 .ds-nav__link:hover,
-.ds-nav__link--active { color: var(--color-brand-500); }
+.ds-nav__link--active {
+  color: var(--color-brand-500);
+}
 
 /* underline: brand-500 → brand-300 gold gradient (was teal) */
 .ds-nav__underline {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 1px;
   background: linear-gradient(90deg, var(--color-brand-500), var(--color-brand-300));
   border-radius: 1px;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.38s cubic-bezier(0.16,1,0.3,1);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .ds-nav__link:hover .ds-nav__underline,
-.ds-nav__link--active .ds-nav__underline { transform: scaleX(1); }
+.ds-nav__link--active .ds-nav__underline {
+  transform: scaleX(1);
+}
 
 /* CTA button: sapphire-700 filled when scrolled (was teal) */
 .ds-cta {
@@ -358,21 +412,24 @@ function scrollToSection(href: string) {
   overflow: hidden;
   isolation: isolate;
   cursor: pointer;
-  background: rgba(255,255,255, calc(0.14 - var(--s) * 0.14));
-  border: 1px solid rgba(255,255,255, calc(0.28 - var(--s) * 0.28));
-  box-shadow:
-    inset 0 0 0 9999px rgba(0, 99, 181, var(--s)),
-    0 4px 20px rgba(0, 99, 181, calc(var(--s) * 0.22));
+  background: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-400));
+  border: 1px solid var(--color-brand-600);
+  color: white;
+  backdrop-filter: none;
   backdrop-filter: blur(calc((1 - var(--s)) * 14px));
   -webkit-backdrop-filter: blur(calc((1 - var(--s)) * 14px));
   transition:
-    background  var(--dur) var(--ease),
+    background var(--dur) var(--ease),
     border-color var(--dur) var(--ease),
-    box-shadow  var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
     backdrop-filter var(--dur) var(--ease),
-    transform   0.22s ease;
+    transform 0.22s ease;
 }
-@media (min-width: 1024px) { .ds-cta { display: flex; } }
+@media (min-width: 1024px) {
+  .ds-cta {
+    display: flex;
+  }
+}
 
 .ds-cta:hover {
   transform: translateY(-2px);
@@ -380,19 +437,35 @@ function scrollToSection(href: string) {
     inset 0 0 0 9999px rgba(0, 61, 138, calc(var(--s) * 0.9 + 0.1)),
     0 8px 32px rgba(0, 99, 181, calc(0.12 + var(--s) * 0.28));
 }
-.ds-cta:active { transform: translateY(0); }
+.ds-cta:active {
+  transform: translateY(0);
+}
 
-.ds-cta__icon { width: 12px; height: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.ds-cta__icon svg { width: 100%; height: 100%; }
+.ds-cta__icon {
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ds-cta__icon svg {
+  width: 100%;
+  height: 100%;
+}
 
 /* shimmer: gold rgba (was white) */
 .ds-cta__shimmer {
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   left: -80%;
   width: 55%;
   background: linear-gradient(
-    105deg, transparent 35%, rgba(249,189,21,0.25) 50%, transparent 65%
+    105deg,
+    transparent 35%,
+    rgba(249, 189, 21, 0.25) 50%,
+    transparent 65%
   );
   transform: skewX(-20deg);
   pointer-events: none;
@@ -408,7 +481,8 @@ function scrollToSection(href: string) {
   flex-direction: column;
   justify-content: center;
   gap: 4px;
-  width: 32px; height: 32px;
+  width: 32px;
+  height: 32px;
   padding: 5px;
   border: none;
   background: transparent;
@@ -424,7 +498,11 @@ function scrollToSection(href: string) {
     0.08
   );
 }
-@media (min-width: 1024px) { .ds-burger { display: none; } }
+@media (min-width: 1024px) {
+  .ds-burger {
+    display: none;
+  }
+}
 
 .ds-burger__bar {
   display: block;
@@ -433,28 +511,45 @@ function scrollToSection(href: string) {
   background: var(--color-ink-900);
   transition:
     background var(--dur) var(--ease),
-    transform 0.38s cubic-bezier(0.16,1,0.3,1),
-    opacity   0.25s ease,
-    width     0.3s  ease;
+    transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease,
+    width 0.3s ease;
 }
-.ds-burger__bar--top { width: 22px; }
-.ds-burger__bar--mid { width: 22px; }
-.ds-burger__bar--bot { width: 22px; }
+.ds-burger__bar--top {
+  width: 22px;
+}
+.ds-burger__bar--mid {
+  width: 22px;
+}
+.ds-burger__bar--bot {
+  width: 22px;
+}
 
-.ds-burger--open .ds-burger__bar--top { transform: translateY(6.5px) rotate(45deg); }
-.ds-burger--open .ds-burger__bar--mid { opacity: 0; transform: scaleX(0); }
-.ds-burger--open .ds-burger__bar--bot { transform: translateY(-6.5px) rotate(-45deg); }
+.ds-burger--open .ds-burger__bar--top {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.ds-burger--open .ds-burger__bar--mid {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.ds-burger--open .ds-burger__bar--bot {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
 
 .ds-drawer {
   position: relative;
   z-index: 2;
   padding: 0 1.5rem 1.25rem;
-  background: rgba(253,252,248,0.97);
+  background: rgba(253, 252, 248, 0.97);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  box-shadow: 0 8px 40px rgba(15,13,11,0.09);
+  box-shadow: 0 8px 40px rgba(15, 13, 11, 0.09);
 }
-@media (min-width: 1024px) { .ds-drawer { display: none; } }
+@media (min-width: 1024px) {
+  .ds-drawer {
+    display: none;
+  }
+}
 
 .ds-drawer__sep {
   height: 1px;
@@ -462,15 +557,16 @@ function scrollToSection(href: string) {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(15,13,11,0.06) 20%,
-    rgba(15,13,11,0.06) 80%,
+    rgba(15, 13, 11, 0.06) 20%,
+    rgba(15, 13, 11, 0.06) 80%,
     transparent
   );
 }
 
 .ds-drawer__list {
   list-style: none;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -479,11 +575,13 @@ function scrollToSection(href: string) {
 .ds-drawer__item {
   opacity: 0;
   transform: translateX(-8px);
-  animation: drawerIn 0.42s cubic-bezier(0.16,1,0.3,1)
-    calc(50ms + var(--i) * 40ms) forwards;
+  animation: drawerIn 0.42s cubic-bezier(0.16, 1, 0.3, 1) calc(50ms + var(--i) * 40ms) forwards;
 }
 @keyframes drawerIn {
-  to { opacity: 1; transform: translateX(0); }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .ds-drawer__link {
@@ -501,7 +599,10 @@ function scrollToSection(href: string) {
   color: var(--color-ink-800);
   cursor: pointer;
   text-align: left;
-  transition: background 0.2s, color 0.2s, padding-left 0.28s cubic-bezier(0.16,1,0.3,1);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    padding-left 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 /* hover: sapphire-50 bg, sapphire-700 text (was teal) */
 .ds-drawer__link:hover {
@@ -512,13 +613,16 @@ function scrollToSection(href: string) {
 
 /* dot: brand-500 gold (was teal) */
 .ds-drawer__dot {
-  width: 4px; height: 4px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: var(--color-brand-500);
   flex-shrink: 0;
   opacity: 0;
   transform: scale(0);
-  transition: opacity 0.2s, transform 0.22s cubic-bezier(0.34,1.56,0.64,1);
+  transition:
+    opacity 0.2s,
+    transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .ds-drawer__link:hover .ds-drawer__dot {
   opacity: 1;
@@ -544,24 +648,40 @@ function scrollToSection(href: string) {
   text-transform: uppercase;
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(0, 99, 181, 0.28);
-  transition: transform 0.22s, box-shadow 0.22s;
+  transition:
+    transform 0.22s,
+    box-shadow 0.22s;
   opacity: 0;
-  animation: drawerIn 0.42s cubic-bezier(0.16,1,0.3,1) calc(50ms + 6 * 40ms) forwards;
+  animation: drawerIn 0.42s cubic-bezier(0.16, 1, 0.3, 1) calc(50ms + 6 * 40ms) forwards;
 }
 .ds-drawer__cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(0, 99, 181, 0.38);
 }
-.ds-drawer__cta-icon { width: 15px; height: 15px; flex-shrink: 0; }
+.ds-drawer__cta-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
 
 .ds-drawer-enter-active {
-  transition: opacity 0.32s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1);
+  transition:
+    opacity 0.32s ease,
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .ds-drawer-leave-active {
-  transition: opacity 0.22s ease, transform 0.28s ease;
+  transition:
+    opacity 0.22s ease,
+    transform 0.28s ease;
 }
 .ds-drawer-enter-from,
-.ds-drawer-leave-to  { opacity: 0; transform: translateY(-8px); }
+.ds-drawer-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
 .ds-drawer-enter-to,
-.ds-drawer-leave-from{ opacity: 1; transform: translateY(0); }
+.ds-drawer-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
