@@ -24,14 +24,14 @@ const stars = Array.from({ length: 5 }, (_, index) => index)
 </script>
 
 <template>
-  <section id="reviews" class="relative overflow-hidden pb-20 lg:pb-32" style="background: var(--color-ivory-100);">
+  <section id="reviews" class="relative overflow-hidden pb-20 lg:pb-32">
     <div
       class="pointer-events-none absolute inset-x-0 top-0 h-40"
       style="background: linear-gradient(180deg, rgba(249, 189, 21, 0.08), rgba(249, 189, 21, 0));"
     />
 
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="rounded-[2rem] border border-white/70 bg-white/88 p-6 shadow-lift backdrop-blur-sm md:p-8 lg:p-10">
+      <div class="rounded-[2rem] border border-white/70 bg-white/88 p-6 backdrop-blur-sm md:p-8 lg:p-10">
         <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div class="max-w-2xl" data-animate>
             <div class="eyebrow mb-5">{{ t('reviews.eyebrow') }}</div>
