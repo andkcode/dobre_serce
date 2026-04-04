@@ -170,13 +170,36 @@
   :root {
     /* scroll-behavior: smooth; */
     --header-h: 80px;
-    --app-stable-vh: 1vh;
+  }
+
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   html {
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+  }
+
+  .animate-float,
+  .animate-drift,
+  .animate-slide-in,
+  .animate-scale-in {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+  @media (hover: none) and (pointer: coarse) {
+    .animate-float,
+    .animate-drift,
+    .animate-slide-in,
+    .animate-scale-in,
+    .animate-fade-up {
+      animation: none !important;
+    }
   }
 
   body {
@@ -204,7 +227,8 @@
 }
 
 .min-stable-screen {
-  min-height: calc(var(--app-stable-vh) * 100);
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 @supports (min-height: 100svh) {
@@ -285,6 +309,20 @@
   .btn-primary:hover::before { opacity: 1; }
   .btn-primary:active { transform: translateY(-1px); }
   .btn-primary:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+  @media (hover: hover) {
+  .btn-primary:hover {
+    transform: translateY(-3px);
+  }
+
+  .btn-outline:hover {
+    transform: translateY(-2px);
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+  }
+}
 
   /*
    * btn-outline — обводка сапфировым, заполнение при ховере.
@@ -823,4 +861,36 @@ rgba(0,   0,   0,   0.20) 100%
    ============================================================ */
 .loader {
   transition: opacity 0.6s ease;
+}
+
+/* ✅ MOBILE PERFORMANCE FIX (iOS + Telegram) */
+
+/* disable heavy animations */
+@media (hover: none) and (pointer: coarse) {
+  .animate-float,
+  .animate-drift,
+  .animate-slide-in,
+  .animate-scale-in,
+  .animate-fade-up {
+    animation: none !important;
+  }
+
+  .app-fab > span {
+    display: none !important;
+  }
+}
+
+/* disable transform hover on mobile */
+@media (hover: hover) {
+  .btn-primary:hover {
+    transform: translateY(-3px);
+  }
+
+  .btn-outline:hover {
+    transform: translateY(-2px);
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+  }
 }

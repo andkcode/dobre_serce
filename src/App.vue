@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue"
+import { ref, onMounted } from "vue"
 import Loader from "@/components/Loader.vue"
 import AppHeader from '@/components/AppHeader.vue'
 import HeroSection from '@/components/HeroSection.vue'
@@ -15,73 +15,16 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const loading = ref(true)
-const STABLE_VIEWPORT_DELTA = 160
-
-let stableViewportHeight = 0
-let onWindowLoad: (() => void) | null = null
-let onViewportResize: (() => void) | null = null
-let onOrientationChange: (() => void) | null = null
-let onPageShow: (() => void) | null = null
-
-function isCoarsePointer() {
-  return window.matchMedia('(hover: none) and (pointer: coarse)').matches
-}
-
-function syncStableViewportHeight(force = false) {
-  const nextHeight = window.innerHeight
-
-  if (
-    !force
-    && isCoarsePointer()
-    && stableViewportHeight !== 0
-    && Math.abs(nextHeight - stableViewportHeight) < STABLE_VIEWPORT_DELTA
-  ) {
-    return
-  }
-
-  stableViewportHeight = nextHeight
-  document.documentElement.style.setProperty('--app-stable-vh', `${nextHeight * 0.01}px`)
-}
 
 onMounted(() => {
-  // FIX 2: if the page already loaded before onMounted fires (common in Vite/HMR),
-  // document.readyState will already be 'complete' and the 'load' event never fires —
-  // the loader would stay on screen forever.
-  // Solution: check readyState first, fall back to the event only if still loading.
-  const hide = () => setTimeout(() => { loading.value = false }, 1200)
-  syncStableViewportHeight(true)
-
-  onViewportResize = () => syncStableViewportHeight()
-  onOrientationChange = () => window.requestAnimationFrame(() => syncStableViewportHeight(true))
-  onPageShow = () => syncStableViewportHeight(true)
-
-  window.addEventListener('resize', onViewportResize)
-  window.addEventListener('orientationchange', onOrientationChange)
-  window.addEventListener('pageshow', onPageShow)
+  const hide = () => setTimeout(() => { loading.value = false }, 800)
 
   if (document.readyState === 'complete') {
     hide()
   } else {
-    onWindowLoad = hide
-    window.addEventListener('load', onWindowLoad, { once: true })
+    window.addEventListener('load', hide, { once: true })
   }
 })
-
-onUnmounted(() => {
-  if (onWindowLoad) {
-    window.removeEventListener('load', onWindowLoad)
-  }
-  if (onViewportResize) {
-    window.removeEventListener('resize', onViewportResize)
-  }
-  if (onOrientationChange) {
-    window.removeEventListener('orientationchange', onOrientationChange)
-  }
-  if (onPageShow) {
-    window.removeEventListener('pageshow', onPageShow)
-  }
-})
-
 </script>
 
 <template>
@@ -94,7 +37,7 @@ onUnmounted(() => {
     <Loader v-if="loading" />
   </Transition>
 
-  <div v-show="!loading" class="min-stable-screen">
+  <div v-show="!loading" class="min-h-screen min-h-[100dvh]">
     <AppHeader />
     <main>
       <HeroSection />
@@ -109,11 +52,10 @@ onUnmounted(() => {
     <AppFooter />
 
     <!-- ── Floating phone button (mobile) ── -->
-    <a
-      href="tel:+380961462910"
-      class="app-fab fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lift transition-all duration-300 hover:scale-110 lg:hidden"
-      style="background: linear-gradient(135deg, var(--color-sapphire-700), var(--color-sapphire-800));"
-      :aria-label="t('app.callAria')"
+  <a
+    href="tel:+380961462910"
+    class="app-fab fixed right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lift transition-all duration-300 lg:hidden"
+    style="bottom: calc(env(safe-area-inset-bottom, 16px) + 16px); background: linear-gradient(135deg, var(--color-sapphire-700), var(--color-sapphire-800));"
     >
       <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
