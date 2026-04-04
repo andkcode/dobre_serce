@@ -219,8 +219,8 @@ function scrollToSection(href: string) {
             class="font-body font-600 rounded-full border px-4 py-1.5 text-xs tracking-wider transition-colors"
             :class="
               lang === 'ru'
-                ? 'border-sapphire-700 bg-sapphire-700 text-white'
-                : 'border-sapphire-700 text-sapphire-700 bg-white'
+                ? 'border-sapphire-700 bg-sapphire-600 text-white'
+                : 'border-sapphire-700 text-sapphire-600 bg-white'
             "
             @click="setLang('ru')"
           >
@@ -231,8 +231,8 @@ function scrollToSection(href: string) {
             class="font-body font-600 rounded-full border px-4 py-1.5 text-xs tracking-wider transition-colors"
             :class="
               lang === 'kk'
-                ? 'border-sapphire-700 bg-sapphire-700 text-white'
-                : 'border-sapphire-700 text-sapphire-700 bg-white'
+                ? 'border-sapphire-600 bg-sapphire-600 text-white'
+                : 'border-sapphire-700 text-sapphire-600 bg-white'
             "
             @click="setLang('kk')"
           >
@@ -412,8 +412,8 @@ function scrollToSection(href: string) {
   overflow: hidden;
   isolation: isolate;
   cursor: pointer;
-  background: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-400));
-  border: 1px solid var(--color-brand-600);
+  background: linear-gradient(135deg, var(--color-blue-700), var(--color-blue-600));
+  border: 1px solid var(--color-blue-800);
   color: white;
   backdrop-filter: none;
   backdrop-filter: blur(calc((1 - var(--s)) * 14px));
