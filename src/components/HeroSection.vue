@@ -94,7 +94,7 @@ onUnmounted(() => {
 <template>
 
   <section
-    class="min-stable-screen relative flex items-center overflow-hidden"
+    class="hero-section min-stable-screen relative flex items-center overflow-hidden"
     :aria-label="t('hero.aria')"
   >
     <!-- ── Layered background ── -->
@@ -137,10 +137,10 @@ onUnmounted(() => {
       <div class="h-20 w-px bg-gradient-to-b from-white/40 via-white/20 to-transparent" />
     </div>
 
-    <div class="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 lg:px-8 lg:py-28 xl:px-16">
-      <div class="lg:max-w-3xl">
+    <div class="hero-content relative z-10 mx-auto w-full max-w-7xl px-6 py-20 lg:px-8 lg:py-28 xl:px-16">
+      <div class="hero-copy lg:max-w-3xl">
 
-        <h1 class="delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-center lg:text-left w-full"
+        <h1 class="hero-title delay-100 animate-fade-up font-display leading-none tracking-tight text-white text-center lg:text-left w-full"
           style="font-size: clamp(1.95rem, 8.2vw, 5.5rem); font-weight: 400; line-height: 1.05;"
         >
           {{ t('hero.titleBlue') }}<br />
@@ -149,34 +149,34 @@ onUnmounted(() => {
 
         <!-- decorative line: brand-500 → transparent (was #DAA532 → transparent) -->
         <div
-          class="delay-200 animate-fade-in mt-7 mb-8 h-px w-24 origin-left"
+          class="hero-divider delay-200 animate-fade-in mt-7 mb-8 h-px w-24 origin-left"
           style="background: linear-gradient(90deg, var(--color-brand-500), transparent);"
         />
 
-        <p class="delay-200 animate-fade-up max-w-xl font-body text-lg font-600 leading-relaxed md:text-xl" style="color: rgba(255,255,255,0.9);">
+        <p class="hero-subtitle delay-200 animate-fade-up max-w-xl font-body text-lg font-600 leading-relaxed md:text-xl" style="color: rgba(255,255,255,0.9);">
           {{ t('hero.subtitle') }}
         </p>
 
-        <div class="delay-300 animate-fade-up mt-10 flex flex-wrap items-start gap-5 sm:mt-12 sm:gap-8">
-          <div v-for="stat in stats" :key="stat.value" class="flex flex-col gap-1">
+        <div class="hero-stats delay-300 animate-fade-up mt-10 flex flex-wrap items-start gap-5 sm:mt-12 sm:gap-8">
+          <div v-for="stat in stats" :key="stat.value" class="hero-stat flex flex-col gap-1">
             <div class="font-display font-700 text-white" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">{{ stat.value }}</div>
             <div class="font-body text-xs font-400 uppercase tracking-widest text-white/80">{{ stat.label }}</div>
           </div>
-          <div class="w-px self-stretch bg-white/15 mx-2 hidden sm:block" />
-          <div class="flex flex-col gap-1">
+          <div class="hero-stats-divider w-px self-stretch bg-white/15 mx-2 hidden sm:block" />
+          <div class="hero-stat flex flex-col gap-1">
             <div class="font-display font-700 text-white" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">4×</div>
               <div class="font-body text-xs font-400 uppercase tracking-widest text-white/80">{{ t('hero.mealLabel') }}</div>
           </div>
         </div>
 
-        <div class="delay-400 animate-fade-up mt-9 flex flex-col items-stretch gap-3 sm:mt-11 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-          <button class="btn-primary w-full justify-center sm:w-auto" @click="scrollTo('#contacts')">
+        <div class="hero-actions delay-400 animate-fade-up mt-9 flex flex-col items-stretch gap-3 sm:mt-11 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+          <button class="hero-action btn-primary w-full justify-center sm:w-auto" @click="scrollTo('#contacts')">
             {{ t('hero.ctaPrimary') }}
             <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </button>
-          <button class="btn-ghost w-full justify-center sm:w-auto" @click="scrollTo('#about')">
+          <button class="hero-action btn-ghost w-full justify-center sm:w-auto" @click="scrollTo('#about')">
             <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
@@ -206,8 +206,71 @@ onUnmounted(() => {
 
 <style scoped>
 @media (max-width: 767px) {
+  .hero-section {
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    padding-top: 7.5rem;
+    padding-bottom: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero-title {
+    font-size: clamp(1.55rem, 7.5vw, 2.65rem) !important;
+    line-height: 1.08 !important;
+    text-wrap: balance;
+  }
+
+  .hero-divider {
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5rem;
+  }
+
+  .hero-subtitle {
+    max-width: none;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .hero-stat {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-stats-divider {
+    display: none;
+  }
+
+  .hero-actions {
+    margin-top: 2rem;
+    gap: 0.85rem;
+  }
+
+  .hero-action {
+    width: 100%;
+  }
+
   .hero-video {
-    object-position: 58% center;
+    width: 104%;
+    left: 50%;
+    transform: translateX(-50%) scale(1.03);
+    object-position: center center;
   }
 }
 </style>
