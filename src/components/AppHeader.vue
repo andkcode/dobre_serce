@@ -528,6 +528,7 @@ function scrollToSection(href: string) {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  width: 100%;
   margin-top: 0.875rem;
   padding: 0.85rem 1.5rem;
   border-radius: 9999px;

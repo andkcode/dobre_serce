@@ -583,7 +583,7 @@
   }
 }
 
-/* @media (max-width: 640px) {
+@media (max-width: 640px) {
   .eyebrow {
     gap: 0.55rem;
     letter-spacing: 0.18em;
@@ -598,7 +598,7 @@
     width: 100%;
     justify-content: center;
   }
-} */
+}
 
 /* ============================================================
    UTILITIES
