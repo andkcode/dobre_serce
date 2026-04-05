@@ -114,46 +114,8 @@ onUnmounted(() => {
         <source :src="heroVideoSrc" type="video/mp4" />
       </video>
       <!-- Multi-layer gradient for depth -->
-      <div class="absolute inset-0 bg-[#3a6048]/40" />
+      <div class="absolute inset-0 bg-[#3a6048]/10" />
       <!-- Warm vignette bottom -->
-    </div>
-
-    <!-- Orb 1: brand-500 gold (was #dcc07e warm gold — unified) -->
-    <div
-      class="animate-float absolute top-[15%] right-[8%] hidden h-80 w-80 rounded-full opacity-[0.08] md:block"
-      style="
-        background: radial-gradient(circle, var(--color-brand-500) 0%, transparent 70%);
-        animation-delay: 0s;
-      "
-    />
-    <!-- Orb 2: sapphire-900 deep (was #b33628 red — replaced with on-brand calm dark) -->
-    <div
-      class="animate-drift absolute bottom-[18%] left-[4%] hidden h-56 w-56 rounded-full opacity-[0.06] md:block"
-      style="
-        background: radial-gradient(circle, var(--color-sapphire-900) 0%, transparent 70%);
-        animation-delay: 2s;
-      "
-    />
-    <!-- Orb 3: white — unchanged -->
-    <div
-      class="animate-float absolute top-[10%] left-[35%] hidden h-40 w-40 rounded-full opacity-[0.04] md:block"
-      style="
-        background: radial-gradient(circle, #ffffff 0%, transparent 70%);
-        animation-delay: 3.5s;
-      "
-    />
-
-    <div
-      class="absolute top-1/2 left-8 hidden -translate-y-1/2 flex-col items-center gap-3 lg:flex"
-    >
-      <div class="h-20 w-px bg-gradient-to-b from-transparent via-white/20 to-white/40" />
-      <div
-        class="animate-rotate-slow flex h-7 w-7 items-center justify-center rounded-full border border-white/20"
-        style="animation-duration: 15s"
-      >
-        <div class="h-1 w-1 rounded-full bg-white/50" />
-      </div>
-      <div class="h-20 w-px bg-gradient-to-b from-white/40 via-white/20 to-transparent" />
     </div>
 
     <div
