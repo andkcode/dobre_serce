@@ -7,20 +7,32 @@ const reviewCards = [
     rating: '5.0',
     logo: 'https://optim.tildacdn.pro/tild6337-6535-4561-a332-393266656637/-/format/webp/cdae02c9-1322-4ef9-8.webp',
     logoAlt: '2GIS',
-    background: '#F9BD15',
-    fullStars: true,
+    background: 'linear-gradient(145deg, rgba(255, 250, 232, 0.98), rgba(242, 233, 202, 0.95))',
+    text: 'var(--color-ink-900)',
+    mutedText: 'rgba(58, 48, 24, 0.7)',
+    shell: 'rgba(255, 255, 255, 0.72)',
+    ring: 'rgba(168, 117, 0, 0.14)',
+    shadow: '0 14px 30px rgba(168, 117, 0, 0.12)',
+    star: 'var(--color-brand-600)',
+    filledStars: 5,
+    trailingStarOpacity: 1,
   },
   {
     name: 'GOOGLE',
     rating: '4.9',
     logo: 'https://optim.tildacdn.pro/tild6139-6439-4865-a466-336262633664/-/format/webp/2702604.png.webp',
     logoAlt: 'Google',
-    background: '#0063B5',
-    fullStars: false,
+    background: 'linear-gradient(145deg, rgba(243, 249, 255, 0.98), rgba(208, 233, 252, 0.95))',
+    text: 'var(--color-sapphire-900)',
+    mutedText: 'rgba(0, 61, 138, 0.68)',
+    shell: 'rgba(255, 255, 255, 0.76)',
+    ring: 'rgba(0, 99, 181, 0.12)',
+    shadow: '0 14px 30px rgba(0, 99, 181, 0.12)',
+    star: 'var(--color-brand-500)',
+    filledStars: 4,
+    trailingStarOpacity: 0.78,
   },
 ]
-
-const starsImage = 'https://static.tildacdn.pro/tild3839-3763-4131-b439-323839373861/svgexport-20.svg'
 </script>
 
 <template>
@@ -36,7 +48,15 @@ const starsImage = 'https://static.tildacdn.pro/tild3839-3763-4131-b439-32383937
             rel="noopener noreferrer"
             class="reviews-card"
             :aria-label="`Открыть отзывы ${card.name}`"
-            :style="{ background: card.background }"
+            :style="{
+              background: card.background,
+              color: card.text,
+              '--reviews-muted': card.mutedText,
+              '--reviews-shell': card.shell,
+              '--reviews-ring': card.ring,
+              '--reviews-shadow': card.shadow,
+              '--reviews-star': card.star,
+            }"
           >
             <div class="reviews-card__logo-wrap">
               <img :src="card.logo" :alt="card.logoAlt" class="reviews-card__logo" loading="lazy" decoding="async">
@@ -46,11 +66,16 @@ const starsImage = 'https://static.tildacdn.pro/tild3839-3763-4131-b439-32383937
               <div class="reviews-card__name">{{ card.name }}</div>
               <div class="reviews-card__score-row">
                 <div class="reviews-card__rating">{{ card.rating }}</div>
-                <div v-if="card.fullStars" class="reviews-card__stars reviews-card__stars--full" aria-label="5 stars">
+                <div class="reviews-card__stars reviews-card__stars--inline" :aria-label="`${card.rating} stars`">
                   <svg
                     v-for="star in 5"
                     :key="`${card.name}-${star}`"
                     class="reviews-card__star"
+                    :class="{
+                      'reviews-card__star--filled': star <= card.filledStars,
+                      'reviews-card__star--partial': star === 5 && card.trailingStarOpacity < 1,
+                    }"
+                    :style="star === 5 && card.trailingStarOpacity < 1 ? { opacity: card.trailingStarOpacity } : undefined"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
@@ -58,7 +83,6 @@ const starsImage = 'https://static.tildacdn.pro/tild3839-3763-4131-b439-32383937
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.922-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.196-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81H7.03a1 1 0 00.95-.69l1.07-3.292z" />
                   </svg>
                 </div>
-                <img v-else :src="starsImage" alt="5 stars" class="reviews-card__stars" loading="lazy" decoding="async">
               </div>
             </div>
           </a>
@@ -113,8 +137,9 @@ const starsImage = 'https://static.tildacdn.pro/tild3839-3763-4131-b439-32383937
   min-height: 68px;
   padding: 0.75rem 0.9rem;
   border-radius: 16px;
+  box-shadow: var(--reviews-shadow);
+  border: 1px solid var(--reviews-ring);
   text-decoration: none;
-  color: #ffffff;
   transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
 }
 
@@ -130,8 +155,8 @@ const starsImage = 'https://static.tildacdn.pro/tild3839-3763-4131-b439-32383937
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.16);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  background: var(--reviews-shell);
+  box-shadow: inset 0 0 0 1px var(--reviews-ring);
 }
 
 .reviews-card__logo {
@@ -171,28 +196,27 @@ const starsImage = 'https://static.tildacdn.pro/tild3839-3763-4131-b439-32383937
   letter-spacing: 0.16em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--reviews-muted);
 }
 
 .reviews-card__stars {
-  width: 53px;
-  height: 10px;
-  object-fit: contain;
-}
-
-.reviews-card__stars--full {
   display: flex;
   align-items: center;
-  gap: 1px;
+  gap: 2px;
   width: auto;
   height: auto;
-  color: #ffffff;
 }
 
 .reviews-card__star {
   width: 10px;
   height: 10px;
   flex-shrink: 0;
+  color: rgba(122, 106, 72, 0.25);
+}
+
+.reviews-card__star--filled,
+.reviews-card__star--partial {
+  color: var(--reviews-star);
 }
 
 .reviews-button {

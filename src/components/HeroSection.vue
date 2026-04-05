@@ -101,7 +101,7 @@ onUnmounted(() => {
     :aria-label="t('hero.aria')"
   >
     <!-- ── Layered background ── -->
-    <div class="absolute inset-0">
+    <div class="hero-media absolute inset-0">
       <video
         ref="heroVideoRef"
         autoplay
@@ -291,6 +291,20 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
+.hero-section {
+  background: var(--color-sage-700);
+}
+
+.hero-media {
+  background: var(--color-sage-700);
+}
+
+.hero-video {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
 @media (max-width: 767px) {
   .hero-section {
     align-items: flex-start;
@@ -352,9 +366,14 @@ onUnmounted(() => {
   }
 
   .hero-video {
-    width: 104%;
-    left: 50%;
-    transform: translateX(-50%) scale(1.03);
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    min-width: calc(100% + 6px);
+    min-height: calc(100% + 6px);
+    transform: translateZ(0) scale(1.04);
+    transform-origin: center center;
     object-position: center center;
   }
 }
