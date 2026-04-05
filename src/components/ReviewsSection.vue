@@ -7,8 +7,7 @@ const reviewCards = [
     rating: '5.0',
     logo: 'https://optim.tildacdn.pro/tild6337-6535-4561-a332-393266656637/-/format/webp/cdae02c9-1322-4ef9-8.webp',
     logoAlt: '2GIS',
-    background: '#0cb195',
-    shadow: '0 18px 38px rgba(12, 177, 149, 0.22)',
+    background: '#F9BD15',
     fullStars: true,
   },
   {
@@ -16,8 +15,7 @@ const reviewCards = [
     rating: '4.9',
     logo: 'https://optim.tildacdn.pro/tild6139-6439-4865-a466-336262633664/-/format/webp/2702604.png.webp',
     logoAlt: 'Google',
-    background: 'linear-gradient(292deg, rgba(99, 200, 255, 1) 0%, rgba(67, 163, 216, 1) 100%)',
-    shadow: '0 18px 38px rgba(67, 163, 216, 0.24)',
+    background: '#0063B5',
     fullStars: false,
   },
 ]
@@ -38,7 +36,7 @@ const starsImage = 'https://static.tildacdn.pro/tild3839-3763-4131-b439-32383937
             rel="noopener noreferrer"
             class="reviews-card"
             :aria-label="`Открыть отзывы ${card.name}`"
-            :style="{ background: card.background, boxShadow: card.shadow }"
+            :style="{ background: card.background }"
           >
             <div class="reviews-card__logo-wrap">
               <img :src="card.logo" :alt="card.logoAlt" class="reviews-card__logo" loading="lazy" decoding="async">
@@ -188,7 +186,7 @@ const starsImage = 'https://static.tildacdn.pro/tild3839-3763-4131-b439-32383937
   gap: 1px;
   width: auto;
   height: auto;
-  color: #f9bd15;
+  color: #ffffff;
 }
 
 .reviews-card__star {

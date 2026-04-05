@@ -750,6 +750,7 @@ rgba(0,   0,   0,   0.20) 100%
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(249, 189, 21, 0.12);
   }
+  
   /*
    * glass-gold — полупрозрачный золотистый контейнер.
    * Для карточек поверх тёмного Hero-фона.
