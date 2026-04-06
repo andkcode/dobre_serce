@@ -109,7 +109,7 @@ onUnmounted(() => {
         loop
         playsinline
         preload="auto"
-        class="hero-video absolute inset-0 h-full w-full object-cover object-center"
+        class="hero-video absolute inset-0 h-full w-full object-cover"
       >
         <source :src="heroVideoSrc" type="video/mp4" />
       </video>
