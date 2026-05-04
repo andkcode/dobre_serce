@@ -124,7 +124,7 @@ onUnmounted(() => {
       <div class="hero-copy lg:max-w-3xl">
         <h1
           class="hero-title animate-fade-up font-display w-full text-center leading-none tracking-tight text-white delay-100 lg:text-left"
-          style="font-size: clamp(1.95rem, 8.2vw, 5.5rem); font-weight: 700; line-height: 1.05"
+          style="font-size: clamp(1.95rem, 8.2vw, 5.5rem); font-weight: 700; line-height: 1.05; will-change: transform"
         >
           {{ t('hero.titleBlue') }}<br />
           <span>{{ t('hero.titleGold') }}</span>
@@ -138,7 +138,7 @@ onUnmounted(() => {
 
         <p
           class="hero-subtitle animate-fade-up font-body font-600 max-w-xl text-left text-xl leading-relaxed delay-200 md:text-xl"
-          style="color: rgba(255, 255, 255, 0.9);"
+          style="color: rgba(255, 255, 255, 0.9); will-change: transform"
         >
           {{ t('hero.subtitle') }}
         </p>
