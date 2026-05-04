@@ -24,9 +24,35 @@
     <meta property="og:image" content="https://dobroe-serdce.kz/logo.png" />
     <meta name="theme-color" content="#FFFFFF" />
     <title>Доброе сердце — пансионат для пожилых людей</title>
+    <style>
+      /* Critical styles for hero section - prevents CLS and speeds up LCP */
+      html { height: 100%; }
+      body { margin: 0; padding: 0; min-height: 100vh; font-family: system-ui, -apple-system, sans-serif; }
+      #app { display: contents; }
+      .min-h-screen { min-height: 100vh; }
+    </style>
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      // Defer CSS loading to improve LCP - find and update CSS link tag
+      document.addEventListener('DOMContentLoaded', function() {
+        const cssLinks = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).filter(
+          link => link.href.includes('/assets/') && link.href.includes('.css')
+        );
+        cssLinks.forEach(link => {
+          if (link.media !== 'print') {
+            link.media = 'print';
+            link.onload = function() { this.media = 'all'; };
+          }
+        });
+      });
+      // Fallback for if CSS hasn't loaded by the time scripts run
+      window.addEventListener('load', function() {
+        const cssLinks = document.querySelectorAll('link[rel="stylesheet"][media="print"]');
+        cssLinks.forEach(link => { link.media = 'all'; });
+      });
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
