@@ -13,8 +13,20 @@ import ContactsSection from '@/components/ContactsSection.vue'
 import ReviewsSection from '@/components/ReviewsSection.vue'
 import AppFooter from '@/components/AppFooter.vue'
 import { useI18n } from 'vue-i18n'
+import { useSeo } from '@/composables/useSeo'
 
 const { t } = useI18n()
+const currentPath = typeof window !== 'undefined'
+  ? window.location.pathname.replace(/^\/(ru|kz)(?=\/|$)/, '') || '/'
+  : '/'
+
+useSeo({
+  title: t('seo.default.title'),
+  description: t('seo.default.description'),
+  keywords: t('seo.default.keywords'),
+  path: currentPath,
+})
+
 const loading = ref(true)
 
 onMounted(() => {
