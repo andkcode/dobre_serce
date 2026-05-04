@@ -208,6 +208,20 @@
     overflow-x: hidden;
   }
 
+  /* Layout containment for performance - isolates section layout calculations */
+  section {
+    contain: layout style paint;
+  }
+
+  main {
+    contain: layout style;
+  }
+
+  /* Enable content visibility for non-critical sections to defer rendering */
+  section:nth-of-type(n+3) {
+    content-visibility: auto;
+  }
+
   h1, h2, h3 { font-family: var(--font-family-display); }
 
   ::selection {
